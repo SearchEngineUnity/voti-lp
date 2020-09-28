@@ -10,9 +10,14 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import MainFooter from '../components/MainFooter';
-import MainNav from '../components/MainNav';
-import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
+import { mapMainFooterToProps } from '../lib/mapToProps';
 import GlobalStyle from '../global/GlobalStyle';
+import LrHero from '../components/LrHero';
+import LrForm from '../components/LrForm';
+import LrContentBlock from '../components/LrContentBlock';
+import Banner from '../components/Banner';
+import LrCTA from '../components/LrCTA';
+import ContactUs from '../components/ContactUs';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -55,24 +60,15 @@ const Layout = ({ children }) => {
           crossOrigin="anonymous"
           async
         />
-        <script>
-          {`(function(d) {
-    var config = {
-      kitId: 'mwy2rpa',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);`}
-        </script>
-        {/* <link
-          href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap"
-          rel="stylesheet"
-        /> */}
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityMainNavbar)} />
-      <>{children}</>
+      {/* <>{children}</> */}
+      <LrHero />
+      <LrForm />
+      <LrContentBlock />
+      <Banner />
+      <LrCTA />
+      <ContactUs />
       <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} />
     </>
   );
