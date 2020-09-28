@@ -6,91 +6,44 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: rubrik-edge-new,sans-serif;
-    margin: 0 auto;
-    font-weight: 400;
-    font-style: normal;
-    color: #2c2142;
+    font-family: Arial;
   }
 
   h1, h2 {
-    font-weight: 700;
-    font-style: normal;
+   
   }
 
-  h2 {
-    margin-bottom: 1rem;
+  h3 {
+    font-size: 14px;
   }
 
-  a {
-    color: #2C2142;
-    font-weight: 700;
+  li {
+    font-size: 16px;
+  }
+
+  a:link
+  {
+      color:#FFFFFF;
+      text-decoration: none;
+      font-size: 14px;
   }
   
-  a:hover {
-    color: #2C2142;
-    font-weight: 700;
+  a:visited
+  {
+      color:#FFFFFF;
+      text-decoration: none;
+      font-size: 14px;
   }
   
-  a:active {
-    color: #2C2142;
-    font-weight: 700;
-  }
-
-  a.active {
-    color: #2C2142;
-    font-weight: 700;
-  }
-  
-  a:visited {
-    color: #2C2142;
-    font-weight: 700;
-  }
-
-  section {
-    margin-bottom: 3rem;
-  }
-
-  section:nth-child(n+2) {
-    padding-top: 6.5rem;
-    margin-top: -6.5rem;
-
-    @media screen and (max-width: 991px) {
-      padding-top: 18rem;
-      margin-top: -18rem;
-    }
+  a:hover 
+  {
+      color:#FFFFFF;
+      text-decoration: none;
+      font-size: 14px;
   }
 
   hr {
-    border-bottom: 1px solid #F2F2F2;
-    background-color: #F2F2F2;
-    margin: 0;
-  }
-
-  input, textara {
-    border-color: #D4D2D9;
-  }
-
-  button:focus, a:focus {
-    outline-color: #086068;
-  }
-
-  .borderdesign {
-    border:2px solid #f2f2f2f2;
-  }
-
-  .leader {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-  }
-
-  .form-control:focus, .form-control:active, .form-control:hover {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    border: #0a7b86 solid 1px;
+    border-top: 1px solid white;
   }
 
   @media screen and (min-width: 576px) {
@@ -98,6 +51,12 @@ export default createGlobalStyle`
       font-size: 16px;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    padding-top: 18rem;
+    margin-top: -18rem;
+  }
+}
   
   @media screen and (min-width: 992px) {
     html {
