@@ -17,29 +17,22 @@ export default createGlobalStyle`
     font-size: 14px;
   }
 
-  li {
-    font-size: 16px;
-  }
-
-  a:link
-  {
-      color:#FFFFFF;
-      text-decoration: none;
-      font-size: 14px;
+  a:link {
+    color:#FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
   }
   
-  a:visited
-  {
-      color:#FFFFFF;
-      text-decoration: none;
-      font-size: 14px;
+  a:visited {
+    color:#FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
   }
   
-  a:hover 
-  {
-      color:#FFFFFF;
-      text-decoration: none;
-      font-size: 14px;
+  a:hover {
+    color:#FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
   }
 
   hr {
