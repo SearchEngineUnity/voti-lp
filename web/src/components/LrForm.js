@@ -49,10 +49,8 @@ function LrForm() {
           </StyledText>
         </div>
         <FormDiv className="col-lg-6 col-12">
-          {/* <div className="embed-responsive embed-responsive-4by3"> */}
           <embed
             type="text/html"
-            // className="embed-responsive-item"
             src="https://marketing.votidetection.com/l/856933/2020-09-29/5qp26"
             height="750"
             width="100%"
