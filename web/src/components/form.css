@@ -1,0 +1,44 @@
+/* Targest Entire Form */
+#pardot-form {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #F5F5F5;
+    font-size: 1rem;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+/* Targets Description */
+#pardot-form p span.description {
+    padding: 1rem 1rem 1rem 0;
+    display: inline-block;
+}
+/* Targest Errors */
+#pardot-form span.error {
+    clear: left;
+    display: block;
+    font-weight: bold;
+    margin-top: 2px;
+    padding-left: 10rem;
+}
+/* Targets Content Spaceing  */
+#pardot-form p {
+    clear: left;
+    line-height: 1.4em;
+    margin: 3px 5px;
+    padding: 3px 2px;
+}
+/* Targest textarea fields */
+#pardot-form textarea.standard {
+    float: none;
+    overflow: auto;
+    padding: 2px;
+    border-radius: 4px;
+}
+/* Targest Button */
+#pardot-form p.submit {
+    background-color: #3c6286;
+    color: white;
+    font-size: 14px;
+    padding: 1rem;
+    margin: 1rem;
+}
