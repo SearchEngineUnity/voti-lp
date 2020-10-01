@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Container, Col, Jumbotron } from 'react-bootstrap';
 import styled from 'styled-components';
 import votiSupport from '../images/voti-support.png';
 
@@ -10,15 +10,11 @@ const ListUl = styled.ul`
   line-height: 2rem;
 `;
 
-const PaddedRow = styled(Row)`
-  margin: 3rem;
-`;
-
 function LrCTA() {
   return (
-    <Container>
-      <PaddedRow>
-        <div className="col-lg-6 col-12">
+    <Container className="fluid">
+      <Row>
+        <Col className="col-lg-6 col-12 p-3">
           <h2>
             Threats Aren’t Working 9-5 &amp; <br /> Neither Are We
           </h2>
@@ -37,12 +33,12 @@ function LrCTA() {
             <li>Training (on-site, online, or in-class) for your operators</li>
             <li>Market-responsive aftercare for products</li>
           </ListUl>
-        </div>
+        </Col>
 
-        <div className="col-lg-6 col-12">
-          <img src={votiSupport} alt="Voti Support" heigh="auto" width="500" />
-        </div>
-      </PaddedRow>
+        <Col className="col-lg-6 col-12 p-3">
+          <img src={votiSupport} alt="Voti Support" />
+        </Col>
+      </Row>
     </Container>
   );
 }
