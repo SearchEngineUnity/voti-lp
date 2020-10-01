@@ -9,8 +9,8 @@ export default createGlobalStyle`
     font-family: Arial;
   }
 
-  h1, h2 {
-   
+  h1 {
+   font-weight: bold;
   }
 
   h3 {
@@ -37,6 +37,10 @@ export default createGlobalStyle`
 
   hr {
     border-top: 1px solid white;
+  }
+
+  img {
+    object-fit: contain;
   }
 
   @media screen and (min-width: 576px) {

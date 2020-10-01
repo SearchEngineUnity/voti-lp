@@ -1,22 +1,32 @@
 import React from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Jumbotron, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import votiBrochure from '../images/voti-brochure-mockup.png';
 
-function LrHero() {
+const StyledJumbo = styled(Jumbotron)`
+  background-color: #193753;
+  color: white;
+  border-radius: 0;
+`;
+
+function LrHeader() {
   return (
-    <Container>
+    <StyledJumbo className="fluid">
       <Row>
-        <div className="c-footer__brand">
-          <a href="https://votidetection.com">
-            <img
-              src="https://votidetection.com/wp-content/uploads/2020/04/logo-white-1.png"
-              alt="Voti Detection Main Logo"
-            />
-          </a>
-        </div>
-        <div className="col-lg-6 col-12">This is for Hero image</div>
+        <Col className="col-lg-6 col-12 p-3">
+          <h1>Download the VOTI Product Brochure</h1>
+          <br />
+          <h2>
+            Learn about each of VOTI’s unique products, and how they can help you detect threats —
+            no matter what industry you operate in.
+          </h2>
+        </Col>
+        <Col className="col-lg-6 col-12 p-3">
+          <img src={votiBrochure} alt="Voti Support" />
+        </Col>
       </Row>
-    </Container>
+    </StyledJumbo>
   );
 }
 
-export default LrHero;
+export default LrHeader;

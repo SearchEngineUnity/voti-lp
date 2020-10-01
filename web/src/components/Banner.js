@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Row } from 'react-bootstrap';
+import { Jumbotron, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import bioSans from '../images/biosans-os-screen.png';
 import bioLogo from '../images/biosans-logo.png';
@@ -20,12 +20,12 @@ function Banner() {
   return (
     <StyledJumbo className="fluid p-8 m-0 rounded-0">
       <Row className="m-0 p-6">
-        <div className="col-lg-6 col-12">
+        <Col className="col-lg-6 col-12 p-3">
           <PadDiv>
             <img src={bioSans} alt="Bio Sans" height="auto" width="500" />
           </PadDiv>
-        </div>
-        <div className="col-lg-6 col-12">
+        </Col>
+        <Col className="col-lg-6 col-12 p-3">
           <h2 className="mx-auto m-0">
             See the Difference the BioSans™ <br /> OS Makes
           </h2>
@@ -38,7 +38,7 @@ function Banner() {
           <PadDiv>
             <img src={bioLogo} alt="Biosans Logo" className="mx-auto" />
           </PadDiv>
-        </div>
+        </Col>
       </Row>
     </StyledJumbo>
   );

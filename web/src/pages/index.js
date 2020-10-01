@@ -7,6 +7,7 @@ import LrContentBlock from '../components/LrContentBlock';
 import Banner from '../components/Banner';
 import LrCTA from '../components/LrCTA';
 import ContactUs from '../components/ContactUs';
+import LrHeader from '../components/LrHeader';
 
 const LandingPage = () => (
   <Layout>
@@ -25,6 +26,7 @@ const LandingPage = () => (
       {/* <meta name="twitter:image" content="" /> */}
       <meta name="robots" content="noindex nofollow" />
     </Helmet>
+    <LrHeader />
     <LrHero />
     <LrForm />
     <LrContentBlock />

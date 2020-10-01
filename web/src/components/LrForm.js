@@ -1,8 +1,8 @@
 import React from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-const FormDiv = styled.div`
+const FormCol = styled(Col)`
   background-color: #f5f5f5;
 `;
 
@@ -19,17 +19,13 @@ const StyledText = styled.p`
 
 function LrForm() {
   return (
-    <Container>
+    <Container className="fluid">
       <Row>
-        <div className="col-lg-6 col-12">
-          <h2>
-            Threats Aren’t Working 9-5 &amp; <br /> Neither Are We
-          </h2>
+        <Col className="col-lg-6 col-12 p-3">
+          <h2>Could your threat detection system be doing more of the work for you?</h2>
           <br />
           <p>
-            We know the issues you deal with have a knack for occurring outside of regular working
-            hours. We stand behind our products, and are here to support you however you need it,
-            with:
+            Here are some of the differences using VOTI detection can make for you and your team:
           </p>
           <br />
           <ListUl>
@@ -47,15 +43,15 @@ function LrForm() {
             If this sounds like something you need, our full product catalogue can give you the
             details on the exact detection product that fits your needs.
           </StyledText>
-        </div>
-        <FormDiv className="col-lg-6 col-12">
+        </Col>
+        <FormCol className="col-lg-6 col-12 p-3">
           <embed
             type="text/html"
             src="https://marketing.votidetection.com/l/856933/2020-09-29/5qp26"
-            height="750"
+            height="740"
             width="100%"
           />
-        </FormDiv>
+        </FormCol>
       </Row>
     </Container>
   );
