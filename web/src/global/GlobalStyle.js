@@ -39,19 +39,23 @@ export default createGlobalStyle`
     border-top: 1px solid white;
   }
 
-  img {
-    object-fit: contain;
-  }
+  @media screen and ( max-width: 991px ) {
+    img.responsive { width: 300px; }
+    }
+    @media screen and ( min-width: 992px) {
+    img.responsive { width: 500px;}
+    }
+    img.responsive { height: auto; }
 
   @media screen and (min-width: 576px) {
     html {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
   @media screen and (max-width: 991px) {
-    padding-top: 18rem;
-    margin-top: -18rem;
+  html{
+    font-size: 14px;
   }
 }
   

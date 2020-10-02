@@ -22,13 +22,11 @@ function Banner() {
       <Row className="m-0 p-6">
         <Col className="col-lg-6 col-12 p-3">
           <PadDiv>
-            <img src={bioSans} alt="Bio Sans" height="auto" width="500" />
+            <img src={bioSans} className="responsive" alt="Bio Sans" />
           </PadDiv>
         </Col>
         <Col className="col-lg-6 col-12 p-3">
-          <h2 className="mx-auto m-0">
-            See the Difference the BioSans™ <br /> OS Makes
-          </h2>
+          <h2 className="mx-auto m-0">See the Difference the BioSans™ OS Makes</h2>
           <p>
             Our innovative BioSans™ operating system runs on all VOTI detection products, merging
             multiple shots into a single 3D image. Now, your operators only need to look at one

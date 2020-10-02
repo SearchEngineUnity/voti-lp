@@ -9,6 +9,12 @@ const StyledJumbo = styled(Jumbotron)`
   border-radius: 0;
 `;
 
+const StyledCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 function LrHeader() {
   return (
     <StyledJumbo className="fluid">
@@ -21,9 +27,9 @@ function LrHeader() {
             no matter what industry you operate in.
           </h2>
         </Col>
-        <Col className="col-lg-6 col-12 p-3">
-          <img src={votiBrochure} alt="Voti Support" />
-        </Col>
+        <StyledCol className="col-lg-6 col-12 p-3">
+          <img src={votiBrochure} alt="Voti Support" className="responsive" />
+        </StyledCol>
       </Row>
     </StyledJumbo>
   );

@@ -8,12 +8,27 @@ const StyledJumbo = styled(Jumbotron)`
   border-radius: 0;
   padding: 2rem;
   margin: 0;
+
+  @media (max-width: 991px) {
+    padding: 1.5rem;
+    width: auto;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding 1.5rem;
+    width: auto;
+  }
 `;
 
 const StyledDiv = styled.div`
   border: 1px solid white;
   text-align: center;
   padding: 1rem;
+
+  @media screen and (max-width: 575px) {
+    padding 0.5rem;
+   
+  }
 `;
 
 function LrHeader() {
