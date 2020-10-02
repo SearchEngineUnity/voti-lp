@@ -21,7 +21,7 @@ const Spacer = styled.div`
 
 function MainFooter() {
   return (
-    <Footer id="footer" class="c-footer c-footer--dark">
+    <Footer id="footer" className="c-footer c-footer--dark">
       <Spacer id="footer-contain" className="container d-flex justify-content-between">
         <div className="c-footer__brand">
           <a href="https://votidetection.com">
