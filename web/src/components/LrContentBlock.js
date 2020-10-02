@@ -3,6 +3,12 @@ import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import competitor from '../images/competitor-vs-voti.png';
 
+const StyledCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 function LrContentBlock() {
   return (
     <Container className="fluid">
@@ -17,9 +23,9 @@ function LrContentBlock() {
             depth and detail. Our competition doesn’t even come close, see for yourself!
           </p>
         </Col>
-        <Col className="col-lg-7 col-12 p-3">
-          <img className="fluid" src={competitor} alt="Competitor vs Voti" />
-        </Col>
+        <StyledCol className="col-lg-7 col-12 p-3">
+          <img className="responsive" src={competitor} alt="Competitor vs Voti" />
+        </StyledCol>
       </Row>
     </Container>
   );

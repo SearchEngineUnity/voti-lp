@@ -10,6 +10,12 @@ const ListUl = styled.ul`
   line-height: 2rem;
 `;
 
+const StyledCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 function LrCTA() {
   return (
     <Container className="fluid">
@@ -35,9 +41,9 @@ function LrCTA() {
           </ListUl>
         </Col>
 
-        <Col className="col-lg-6 col-12 p-3">
-          <img src={votiSupport} alt="Voti Support" />
-        </Col>
+        <StyledCol className="col-lg-6 col-12 p-3">
+          <img className="responsive" src={votiSupport} alt="Voti Support" />
+        </StyledCol>
       </Row>
     </Container>
   );

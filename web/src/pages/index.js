@@ -12,8 +12,11 @@ import LrHeader from '../components/LrHeader';
 const LandingPage = () => (
   <Layout>
     <Helmet>
-      <title>Voti Brochure Download</title>
-      <meta name="description" content="" />
+      <title>VOTI Detection Product Offerings for Threat Detection &amp; Management</title>
+      <meta
+        name="description"
+        content="Download our full product brochure to learn more about all of VOTI’s product offerings for threat detection. We can help you better detect threats, and make threat management easier on your operators with 3D Perspective™ image technology, consistent OS updates, and with our remote support system."
+      />
       <meta property="og:locale" content="en_CA" />
       {/* <meta property="og:type" content="" /> */}
       {/* <meta property="og:url" content="" /> */}
