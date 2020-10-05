@@ -8,6 +8,13 @@ const Footer = styled.footer`
   font-size: 1rem;
   padding: 80px 0 20px;
   font-weight: 200;
+  width: 100%;
+
+  media (max-width: 991px) {
+    width: 100%;
+    float: left;
+    padding: 70px 0;
+  }
 `;
 
 const Copyright = styled.p`

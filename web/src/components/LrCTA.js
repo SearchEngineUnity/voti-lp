@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Container, Col, Jumbotron } from 'react-bootstrap';
+import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import votiSupport from '../images/voti-support.png';
 
@@ -18,12 +18,10 @@ const StyledCol = styled(Col)`
 
 function LrCTA() {
   return (
-    <Container className="fluid">
+    <Container fluid>
       <Row>
-        <Col className="col-lg-6 col-12 p-3">
-          <h2>
-            Threats Aren’t Working 9-5 &amp; <br /> Neither Are We
-          </h2>
+        <Col className="col-md-6 col-12">
+          <h2>Threats Aren’t Working 9-5 &amp; Neither Are We</h2>
           <br />
           <p>
             We know the issues you deal with have a knack for occurring outside of regular working
@@ -41,8 +39,8 @@ function LrCTA() {
           </ListUl>
         </Col>
 
-        <StyledCol className="col-lg-6 col-12 p-3">
-          <img className="responsive" src={votiSupport} alt="Voti Support" />
+        <StyledCol className="col-md-6 col-12">
+          <img src={votiSupport} alt="Voti Support" className="img-fluid" />
         </StyledCol>
       </Row>
     </Container>

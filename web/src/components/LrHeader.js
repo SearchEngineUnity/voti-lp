@@ -1,13 +1,10 @@
 import React from 'react';
-import { Row, Jumbotron, Col } from 'react-bootstrap';
+import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-const StyledJumbo = styled(Jumbotron)`
+const StyledContainer = styled(Container)`
   background-color: #193753;
   color: white;
-  border-radius: 0;
-  padding: 2rem;
-  margin: 0;
 
   @media (max-width: 991px) {
     padding: 1.5rem;
@@ -33,9 +30,9 @@ const StyledDiv = styled.div`
 
 function LrHeader() {
   return (
-    <StyledJumbo className="fluid">
+    <StyledContainer fluid>
       <Row>
-        <Col className="c-footer__brand col-lg-6 col-12 p-3">
+        <Col className="col-md-6 col-12">
           <a href="https://votidetection.com">
             <img
               src="https://votidetection.com/wp-content/uploads/2020/04/logo-white-1.png"
@@ -43,11 +40,11 @@ function LrHeader() {
             />
           </a>
         </Col>
-        <Col className="col-lg-6 col-12 p-3">
+        <Col className="col-md-6 col-12">
           <StyledDiv>CONTACT AN EXPERT TODAY: 1-800-555-5555</StyledDiv>
         </Col>
       </Row>
-    </StyledJumbo>
+    </StyledContainer>
   );
 }
 
