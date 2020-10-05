@@ -11,7 +11,7 @@ const StyledCol = styled(Col)`
 
 function LrContentBlock() {
   return (
-    <Container fluid>
+    <Container fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
           <h2>Discover the 3D Perspective™ Advantage</h2>
@@ -24,7 +24,7 @@ function LrContentBlock() {
           </p>
         </Col>
         <StyledCol className="col-md-6 col-12">
-          <img className="responsive" src={competitor} alt="Competitor vs Voti" />
+          <img className="img-fluid" src={competitor} alt="Competitor vs Voti" />
         </StyledCol>
       </Row>
     </Container>

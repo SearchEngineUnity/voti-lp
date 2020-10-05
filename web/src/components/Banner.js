@@ -17,7 +17,7 @@ const PadDiv = styled.div`
 
 function Banner() {
   return (
-    <StyledContainer fluid>
+    <StyledContainer fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12 ">
           <PadDiv>

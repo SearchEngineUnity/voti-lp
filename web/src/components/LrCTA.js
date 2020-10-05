@@ -18,7 +18,7 @@ const StyledCol = styled(Col)`
 
 function LrCTA() {
   return (
-    <Container fluid>
+    <Container fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
           <h2>Threats Aren’t Working 9-5 &amp; Neither Are We</h2>

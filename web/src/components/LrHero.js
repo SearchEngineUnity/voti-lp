@@ -16,7 +16,7 @@ const StyledCol = styled(Col)`
 
 function LrHeader() {
   return (
-    <StyledContainer fluid>
+    <StyledContainer fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
           <h1>Download the VOTI Product Brochure</h1>
@@ -27,7 +27,7 @@ function LrHeader() {
           </h2>
         </Col>
         <StyledCol className="col-md-6 col-12">
-          <img src={votiBrochure} alt="Voti Support" />
+          <img src={votiBrochure} alt="Voti Support" className="img-fluid" />
         </StyledCol>
       </Row>
     </StyledContainer>

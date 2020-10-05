@@ -26,7 +26,7 @@ const PadDiv = styled.div`
 
 function LrForm() {
   return (
-    <Container fluid>
+    <Container fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
           <h2>Could your threat detection system be doing more of the work for you?</h2>
@@ -57,7 +57,7 @@ function LrForm() {
               type="text/html"
               src="https://marketing.votidetection.com/l/856933/2020-09-29/5qp26"
               height="740"
-              width="450"
+              width="500"
             />
           </PadDiv>
         </FormCol>
