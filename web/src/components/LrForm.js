@@ -17,11 +17,18 @@ const StyledText = styled.p`
   font-weight: bold;
 `;
 
+const PadDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+`;
+
 function LrForm() {
   return (
-    <Container className="fluid">
+    <Container fluid>
       <Row>
-        <Col className="col-lg-6 col-12 p-3">
+        <Col className="col-md-6 col-12">
           <h2>Could your threat detection system be doing more of the work for you?</h2>
           <br />
           <p>
@@ -44,13 +51,15 @@ function LrForm() {
             details on the exact detection product that fits your needs.
           </StyledText>
         </Col>
-        <FormCol className="col-lg-6 col-12 p-3">
-          <embed
-            type="text/html"
-            src="https://marketing.votidetection.com/l/856933/2020-09-29/5qp26"
-            height="740"
-            width="100%"
-          />
+        <FormCol className="col-md-6 col-12">
+          <PadDiv className="mx-auto">
+            <embed
+              type="text/html"
+              src="https://marketing.votidetection.com/l/856933/2020-09-29/5qp26"
+              height="740"
+              width="450"
+            />
+          </PadDiv>
         </FormCol>
       </Row>
     </Container>

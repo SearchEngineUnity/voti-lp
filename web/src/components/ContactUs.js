@@ -1,35 +1,37 @@
 import React from 'react';
-import { Jumbotron, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-const StyledJumbo = styled(Jumbotron)`
+const StyledContainer = styled(Container)`
   background-color: #3c6286;
   color: white;
-  height: 18rem;
   font-size: 2.75rem;
   font-weight: bold;
 `;
 
-const StyledDiv = styled.div`
-  padding-right: 12rem;
-  padding-top: 1.5rem;
-  font-size: 14px;
+const StyledCol = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 function ContactUs() {
   return (
-    <StyledJumbo className="fluid p-8 m-0 rounded-0">
-      <Row className="m-0 p-6">
-        <p className="mx-auto m-0">
-          Interested in <br /> more Information?
-        </p>
-        <StyledDiv className="mx-auto">
+    <StyledContainer fluid>
+      <Row>
+        <StyledCol className="col-md-6 col-12">
+          <p>
+            Interested in <br /> more Information?
+          </p>
+        </StyledCol>
+
+        <StyledCol className="col-md-6 col-12">
           <button type="button" className="btn btn-outline-light px-5 py-4 rounded-0">
             CONTACT US
           </button>
-        </StyledDiv>
+        </StyledCol>
       </Row>
-    </StyledJumbo>
+    </StyledContainer>
   );
 }
 
