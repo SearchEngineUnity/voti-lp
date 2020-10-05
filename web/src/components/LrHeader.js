@@ -32,7 +32,7 @@ function LrHeader() {
   return (
     <StyledContainer fluid className="p-5">
       <Row>
-        <Col className="col-md-6 col-12">
+        <Col className="col-md-7 col-12">
           <a href="https://votidetection.com">
             <img
               className="img-fluid"
@@ -41,7 +41,7 @@ function LrHeader() {
             />
           </a>
         </Col>
-        <Col className="col-md-6 col-12">
+        <Col className="col-md-5 col-12">
           <StyledDiv>CONTACT AN EXPERT TODAY: 1-800-555-5555</StyledDiv>
         </Col>
       </Row>
