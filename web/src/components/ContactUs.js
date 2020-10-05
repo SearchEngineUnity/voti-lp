@@ -17,7 +17,7 @@ const StyledCol = styled(Col)`
 
 function ContactUs() {
   return (
-    <StyledContainer fluid>
+    <StyledContainer fluid className="p-5">
       <Row>
         <StyledCol className="col-md-6 col-12">
           <p>

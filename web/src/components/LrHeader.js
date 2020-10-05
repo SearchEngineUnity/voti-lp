@@ -30,11 +30,12 @@ const StyledDiv = styled.div`
 
 function LrHeader() {
   return (
-    <StyledContainer fluid>
+    <StyledContainer fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
           <a href="https://votidetection.com">
             <img
+              className="img-fluid"
               src="https://votidetection.com/wp-content/uploads/2020/04/logo-white-1.png"
               alt="Voti Detection Main Logo"
             />
