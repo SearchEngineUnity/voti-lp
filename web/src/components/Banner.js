@@ -26,12 +26,14 @@ function Banner() {
         </Col>
         <Col className="col-md-6 col-12">
           <h2 className="mx-auto">See the Difference the BioSans™ OS Makes</h2>
+          <br />
           <p>
             Our innovative BioSans™ operating system runs on all VOTI detection products, merging
             multiple shots into a single 3D image. Now, your operators only need to look at one
             image, can easily cycle through different densities, have a one-touch view of the last 5
             scans at their fingertips, and will miss fewer threats.
           </p>
+          <br />
           <PadDiv>
             <img src={bioLogo} alt="Biosans Logo" className="mx-auto" />
           </PadDiv>
