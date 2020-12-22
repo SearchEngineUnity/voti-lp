@@ -3,7 +3,7 @@ import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import votiSupport from '../images/voti-support.png';
 
-const ListUl = styled.ul`
+const StyledUl = styled.ul`
   font-size: 1rem;
   margin-left: 1rem;
   list-style-type: disc;
@@ -29,14 +29,14 @@ function LrCTA() {
             with:
           </p>
           <br />
-          <ListUl>
+          <StyledUl>
             <li>24/7 service &amp; support over the phone</li>
             <li>1-year parts and factory labor warranty</li>
             <li>Remote diagnostics &amp; servicing</li>
             <li>Online service portal to track &amp; manage your requests</li>
             <li>Training (on-site, online, or in-class) for your operators</li>
             <li>Market-responsive aftercare for products</li>
-          </ListUl>
+          </StyledUl>
         </Col>
 
         <StyledCol className="col-md-6 col-12">

@@ -9,7 +9,7 @@ const StyledContainer = styled(Container)`
   color: white;
 `;
 
-const PadDiv = styled.div`
+const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,9 +20,9 @@ function Banner() {
     <StyledContainer fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12 ">
-          <PadDiv>
+          <StyledDiv>
             <img className="img-fluid" src={bioSans} alt="Bio Sans" />
-          </PadDiv>
+          </StyledDiv>
         </Col>
         <Col className="col-md-6 col-12">
           <h2 className="mx-auto">See the Difference the BioSans™ OS Makes</h2>
@@ -34,9 +34,9 @@ function Banner() {
             scans at their fingertips, and will miss fewer threats.
           </p>
           <br />
-          <PadDiv>
+          <StyledDiv>
             <img src={bioLogo} alt="Biosans Logo" className="mx-auto" />
-          </PadDiv>
+          </StyledDiv>
         </Col>
       </Row>
     </StyledContainer>
