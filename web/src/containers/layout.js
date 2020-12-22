@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <>{children}</>
-      <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} />
+      {/* <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} /> */}
     </>
   );
 };

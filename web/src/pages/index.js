@@ -29,13 +29,14 @@ const LandingPage = () => (
       {/* <meta name="twitter:image" content="" /> */}
       <meta name="robots" content="noindex nofollow" />
     </Helmet>
-    <LrHeader />
+    <p>Landing Page coming soon</p>
+    {/* <LrHeader />
     <LrHero />
     <LrForm />
     <LrContentBlock />
     <Banner />
     <LrCTA />
-    <ContactUs />
+    <ContactUs /> */}
   </Layout>
 );
 
