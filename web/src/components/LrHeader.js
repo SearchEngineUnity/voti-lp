@@ -30,7 +30,7 @@ const StyledDiv = styled.div`
 
 function LrHeader() {
   return (
-    <StyledContainer fluid className="p-5">
+    <StyledContainer fluid className="px-5 pt-5 pb-0">
       <Row>
         <Col className="col-md-8 col-12">
           <a href="https://votidetection.com">
@@ -42,7 +42,7 @@ function LrHeader() {
           </a>
         </Col>
         <Col className="col-md-4 col-12">
-          <StyledDiv>CONTACT AN EXPERT TODAY: 1-800-555-5555</StyledDiv>
+          {/* <StyledDiv>CONTACT AN EXPERT TODAY: 1-800-555-5555</StyledDiv> */}
         </Col>
       </Row>
     </StyledContainer>

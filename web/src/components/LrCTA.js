@@ -28,7 +28,6 @@ function LrCTA() {
             hours. We stand behind our products, and are here to support you however you need it,
             with:
           </p>
-          <br />
           <StyledUl>
             <li>24/7 service &amp; support over the phone</li>
             <li>1-year parts and factory labor warranty</li>

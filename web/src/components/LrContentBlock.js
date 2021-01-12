@@ -11,7 +11,7 @@ const StyledCol = styled(Col)`
 
 function LrContentBlock() {
   return (
-    <Container fluid className="p-5">
+    <Container fluid className="px-5 pb-5 pt-0">
       <Row>
         <Col className="col-md-6 col-12">
           <h2>Discover the 3D Perspective™ Advantage</h2>

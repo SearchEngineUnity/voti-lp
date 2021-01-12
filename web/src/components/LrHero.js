@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import votiBrochure from '../images/voti-brochure-mockup.png';
+import votiBrochure from '../images/VO-product-brochure-graphic.png';
 
 const StyledContainer = styled(Container)`
   background-color: #193753;
@@ -21,10 +21,11 @@ function LrHeader() {
         <Col className="col-md-6 col-12">
           <h1>Download the VOTI Product Brochure</h1>
           <br />
-          <h2>
-            Learn about each of VOTI’s unique products, and how they can help you detect threats —
-            no matter what industry you operate in.
-          </h2>
+          <p>
+            Learn about VOTI’s range of X-Ray Security scanners and the sophisticated screening
+            solutions they employ. Our scanners can help you protect, detect, and prevent — no
+            matter what industry you operate in.
+          </p>
         </Col>
         <StyledCol className="col-md-6 col-12">
           <img src={votiBrochure} alt="Voti Support" className="img-fluid" />
