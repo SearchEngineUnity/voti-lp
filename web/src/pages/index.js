@@ -43,7 +43,7 @@ const LandingPage = () => (
       <meta name="robots" content="noindex nofollow" />
     </Helmet>
     {/* <p>Landing Page coming soon</p> */}
-    <LrHeader />
+    {/* <LrHeader /> */}
     <LrHero />
     <LrForm />
     <LrContentBlock />

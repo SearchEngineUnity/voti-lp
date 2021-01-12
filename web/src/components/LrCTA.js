@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import votiSupport from '../images/voti-support.png';
+import votiSupport from '../images/plane-640x400.png';
 
 const StyledUl = styled.ul`
   font-size: 1rem;
@@ -22,7 +22,6 @@ function LrCTA() {
       <Row>
         <Col className="col-md-6 col-12">
           <h2>Threats Aren’t Working 9-5 &amp; Neither Are We</h2>
-          <br />
           <p>
             We know the issues you deal with have a knack for occurring outside of regular working
             hours. We stand behind our products, and are here to support you however you need it,

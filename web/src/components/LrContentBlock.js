@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import competitor from '../images/competitor-vs-voti.png';
+import competitor from '../images/lr-row-1-segment-image.png';
 
 const StyledCol = styled(Col)`
   display: flex;

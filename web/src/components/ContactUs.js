@@ -26,9 +26,11 @@ function ContactUs() {
         </StyledCol>
 
         <StyledCol className="col-md-6 col-12">
-          <button type="button" className="btn btn-outline-light px-5 py-4 rounded-0">
-            CONTACT US
-          </button>
+          <a href="https://votidetection.com/contact-us/">
+            <button type="button" className="btn btn-outline-light px-5 py-4 rounded-0">
+              CONTACT US
+            </button>
+          </a>
         </StyledCol>
       </Row>
     </StyledContainer>
