@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import bioSans from '../images/biosans-os-screen.png';
+import bioSans from '../images/lr-row-1-segment-image.png';
 import bioLogo from '../images/biosans-logo.png';
 
 const StyledContainer = styled(Container)`

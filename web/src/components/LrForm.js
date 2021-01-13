@@ -24,10 +24,11 @@ function LrForm() {
     <Container fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
-          <h2>Could your threat detection system be doing more of the work for you?</h2>
+          <h2>Discover the VOTI Detection difference</h2>
           <br />
           <p>
-            Here are some of the differences using VOTI detection can make for you and your team:
+            Here are some of the advantages that using VOTI Detection scanners can make for you and
+            your team:
           </p>
           <br />
           <StyledUl>
@@ -42,8 +43,8 @@ function LrForm() {
           </StyledUl>
           <br />
           <p>
-            If this sounds like something you need, our full product catalogue can give you the
-            details on the exact detection product that fits your needs.
+            Looking for more information? Our product catalogue highlights product and software
+            specifications and discusses our approach to securing a variety of different industries.
           </p>
         </Col>
         <FormCol className="col-md-6 col-12">
@@ -51,7 +52,7 @@ function LrForm() {
             <embed
               type="text/html"
               src="https://marketing.votidetection.com/l/856933/2020-09-29/5qp26"
-              height="740"
+              height="775"
               width="500"
             />
           </StyledDiv>

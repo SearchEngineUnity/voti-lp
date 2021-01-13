@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import votiBrochure from '../images/voti-brochure-mockup.png';
+import votiBrochure from '../images/VO-product-brochure-graphic.png';
 
 const StyledContainer = styled(Container)`
   background-color: #193753;
@@ -14,17 +14,33 @@ const StyledCol = styled(Col)`
   justify-content: center;
 `;
 
+const StyledText = styled.p`
+  font-size: 22px;
+  }
+`;
+
 function LrHeader() {
   return (
     <StyledContainer fluid className="p-5">
       <Row>
         <Col className="col-md-6 col-12">
+          <a href="https://votidetection.com">
+            <img
+              className="img-fluid"
+              src="https://votidetection.com/wp-content/uploads/2020/04/logo-white-1.png"
+              alt="Voti Detection Main Logo"
+            />
+          </a>
+          <br />
+          <br />
+          <br />
           <h1>Download the VOTI Product Brochure</h1>
           <br />
-          <h2>
-            Learn about each of VOTI’s unique products, and how they can help you detect threats —
-            no matter what industry you operate in.
-          </h2>
+          <StyledText>
+            Learn about VOTI’s range of X-Ray Security Scanners and the sophisticated screening
+            solutions they employ. Our security x-ray machines can help you protect, detect, and
+            prevent — no matter what industry you operate in.
+          </StyledText>
         </Col>
         <StyledCol className="col-md-6 col-12">
           <img src={votiBrochure} alt="Voti Support" className="img-fluid" />

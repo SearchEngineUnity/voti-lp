@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import competitor from '../images/competitor-vs-voti.png';
+import competitor from '../images/lr-row-2-segment-image.png';
 
 const StyledCol = styled(Col)`
   display: flex;
@@ -11,7 +11,7 @@ const StyledCol = styled(Col)`
 
 function LrContentBlock() {
   return (
-    <Container fluid className="p-5">
+    <Container fluid className="px-5 pb-5 pt-0">
       <Row>
         <Col className="col-md-6 col-12">
           <h2>Discover the 3D Perspective™ Advantage</h2>
