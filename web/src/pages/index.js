@@ -40,7 +40,7 @@ const LandingPage = () => (
         content="Download our full product brochure to learn more about all of VOTI’s product offerings for threat detection. We can help you better detect threats, and make threat management easier on your operators with 3D Perspective™ image technology, consistent OS updates, and with our remote support system."
       />
       {/* <meta name="twitter:image" content="" /> */}
-      <meta name="robots" content="noindex nofollow" />
+      {/* <meta name="robots" content="noindex nofollow" /> */}
     </Helmet>
     {/* <p>Landing Page coming soon</p> */}
     {/* <LrHeader /> */}
