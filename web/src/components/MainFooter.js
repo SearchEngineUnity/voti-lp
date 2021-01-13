@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
+import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Footer = styled.footer`

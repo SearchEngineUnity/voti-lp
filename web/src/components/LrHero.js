@@ -37,9 +37,9 @@ function LrHeader() {
           <h1>Download the VOTI Product Brochure</h1>
           <br />
           <StyledText>
-            Learn about VOTI’s range of X-Ray Security scanners and the sophisticated screening
-            solutions they employ. Our scanners can help you protect, detect, and prevent — no
-            matter what industry you operate in.
+            Learn about VOTI’s range of X-Ray Security Scanners and the sophisticated screening
+            solutions they employ. Our security x-ray machines can help you protect, detect, and
+            prevent — no matter what industry you operate in.
           </StyledText>
         </Col>
         <StyledCol className="col-md-6 col-12">
