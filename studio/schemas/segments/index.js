@@ -1,4 +1,4 @@
-export { default as ctaForm } from './ctaForm';
 export { default as grid } from './grid';
-export { default as hero } from './hero';
-export { default as lr } from './lrTextImage';
+export { default as lrCta } from './lrCta';
+export { default as lrHero } from './lrHero';
+export { default as lrSegment } from './lrSegment';

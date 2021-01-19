@@ -7,7 +7,7 @@ export default {
       name: 'reference',
       type: 'reference',
       title: 'Reference',
-      to: [{ type: 'page' }, { type: 'guide' }, { type: 'mpGuide' }],
+      to: [{ type: 'landingPage' }, { type: 'listingPage' }],
     },
   ],
 };

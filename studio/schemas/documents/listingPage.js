@@ -2,9 +2,9 @@ import { MdWeb } from 'react-icons/md';
 import * as segments from '../segments';
 
 export default {
-  name: 'page',
+  name: 'listingPage',
   type: 'document',
-  title: 'Structured Page',
+  title: 'Listing Page',
   icon: MdWeb,
   fieldsets: [
     {

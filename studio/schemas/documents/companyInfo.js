@@ -69,5 +69,10 @@ export default {
       title: 'Country',
       type: 'string',
     },
+    {
+      name: 'homePage',
+      title: 'Home Page',
+      type: 'url',
+    },
   ],
 };
