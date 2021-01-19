@@ -45,12 +45,15 @@ export default {
                 name: 'reference',
                 type: 'reference',
                 title: 'Reference',
-                to: [{ type: 'guide' }, { type: 'page' }],
+                to: [{ type: 'landingPage' }, { type: 'listingPage' }],
               },
             ],
           },
         ],
       },
+    },
+    {
+      type: 'illustration',
     },
   ],
 };

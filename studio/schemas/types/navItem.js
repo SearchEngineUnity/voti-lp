@@ -6,7 +6,7 @@ export default {
     {
       name: 'nav',
       type: 'reference',
-      to: [{ type: 'page' }, { type: 'guide' }],
+      to: [{ type: 'landingPage' }, { type: 'listingPage' }],
     },
     {
       name: 'isButton',

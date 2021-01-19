@@ -1,22 +1,15 @@
-import { RiPagesLine } from 'react-icons/ri';
+import { MdWeb } from 'react-icons/md';
+import * as segments from '../segments';
 
 export default {
-  name: 'guide',
+  name: 'landingPage',
   type: 'document',
-  title: 'Guide',
-  icon: RiPagesLine,
+  title: 'Landing Page',
+  icon: MdWeb,
   fieldsets: [
     {
       name: 'general',
       title: 'SEO and General Fields',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-    },
-    {
-      name: 'featuredImages',
-      title: 'Featured Images',
       options: {
         collapsible: true,
         collapsed: true,
@@ -31,8 +24,8 @@ export default {
       },
     },
     {
-      name: 'mainContent',
-      title: 'Main Content',
+      name: 'segments',
+      title: 'Segments',
       options: {
         collapsible: true,
         collapsed: false,
@@ -70,25 +63,6 @@ export default {
       ],
     },
     {
-      name: 'h1',
-      title: 'H1 Text',
-      type: 'string',
-      fieldset: 'general',
-      validation: (Rule) => [Rule.required().error('H1 Text is required')],
-    },
-    {
-      name: 'subtitle',
-      title: 'Subtitle Text',
-      type: 'string',
-      fieldset: 'general',
-    },
-    {
-      name: 'breadcrumb',
-      title: 'Breadcrumb Text',
-      type: 'string',
-      fieldset: 'general',
-    },
-    {
       name: 'description',
       title: 'Meta Description',
       type: 'text',
@@ -100,62 +74,10 @@ export default {
       ],
     },
     {
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'excerpt',
-      fieldset: 'general',
-    },
-    {
-      name: 'author',
-      type: 'reference',
-      title: 'Author',
-      to: [{ type: 'person' }],
-      fieldset: 'general',
-      validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'displayDate',
-      title: 'Display date',
-      type: 'datetime',
-      fieldset: 'general',
-      validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'category',
-      title: 'Category',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'category' }],
-        },
-      ],
-      fieldset: 'general',
-    },
-    {
-      name: 'isChapter',
-      title: 'Is this an MP guide chapter?',
-      type: 'boolean',
-      fieldset: 'general',
-    },
-    {
-      name: 'parentGuide',
-      title: 'Please link to the MP Guide parent if this is a chapter',
-      type: 'reference',
-      to: [{ type: 'mpGuide' }],
-      fieldset: 'general',
-    },
-    {
-      name: 'heroImage',
-      title: 'Hero Image',
-      type: 'imageSet',
-      fieldset: 'featuredImages',
-    },
-    {
       name: 'cardImage',
       title: 'Card Image',
-      type: 'imageSet',
-      fieldset: 'featuredImages',
+      type: 'illustration',
+      fieldset: 'general',
     },
     {
       name: 'facebook',
@@ -170,25 +92,22 @@ export default {
       fieldset: 'social',
     },
     {
-      name: 'toc',
-      title: 'Table of Content',
+      name: 'segments',
       type: 'array',
-      of: [{ type: 'tocLink' }],
-      fieldset: 'mainContent',
-      validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'body',
-      type: 'fullBlockContent',
-      title: 'Body',
-      fieldset: 'mainContent',
-      validation: (Rule) => [Rule.required().error('Field is required')],
+      fieldsest: 'segments',
+      title: 'Segments',
+      of: [
+        ...Object.values(segments).map(({ name, title }) => ({
+          type: name,
+          title,
+        })),
+      ],
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'This guide URL will show as domain.com/slug',
+      description: 'This page URL will show as domain.com/slug',
       fieldset: 'indexing',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
@@ -225,16 +144,15 @@ export default {
   ],
   preview: {
     select: {
-      shortName: 'shortName',
+      title: 'title',
       slug: 'slug.current',
-      media: 'heroImage.mainImage.image',
-      isChapter: 'isChapter',
+      media: 'metaTags.openGraph.image',
     },
-    prepare({ shortName, slug, media, isChapter }) {
-      const mp = isChapter ? 'MP - ' : '';
+    prepare({ title, slug, media }) {
+      const currentSlug = slug === '/' ? '/' : `/${slug}`;
       return {
-        title: `${mp}${shortName}`,
-        subtitle: `/${slug}`,
+        title,
+        subtitle: currentSlug,
         media,
       };
     },

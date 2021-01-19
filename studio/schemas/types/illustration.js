@@ -1,42 +1,31 @@
-import { MdImage } from 'react-icons/md';
-
 export default {
   name: 'illustration',
   title: 'Illustration',
-  type: 'object',
-  icon: MdImage,
-  fieldsets: [
-    {
-      name: 'caption',
-      title: 'Caption',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-    },
-  ],
+  type: 'image',
   fields: [
-    {
-      name: 'image',
-      type: 'image',
-      title: 'Image',
-    },
     {
       name: 'alt',
       type: 'string',
       title: 'Alt',
+      options: {
+        isHighlighted: true, // <-- make this field easily accessible
+      },
     },
     {
       name: 'caption',
       type: 'text',
-      rows: 5,
-      fieldset: 'caption',
+      title: 'Caption',
+    },
+    {
+      name: 'url',
+      type: 'url',
+      title: 'URL',
     },
   ],
   preview: {
     select: {
       title: 'alt',
-      media: 'image',
+      media: 'asset',
     },
     prepare({ title, media }) {
       return {

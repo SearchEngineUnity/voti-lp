@@ -14,7 +14,7 @@ export default {
     {
       name: 'logo',
       title: 'Logo',
-      type: 'image',
+      type: 'illustration',
     },
   ],
   preview: {
