@@ -14,42 +14,18 @@ import { mapMainFooterToProps } from '../lib/mapToProps';
 import GlobalStyle from '../global/GlobalStyle';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
-      sanityCompanyInfo {
-        _key
-        address1
-        city
-        email
-        postalCode
-        province
-        name
-      }
-      sanityMainNavbar {
-        title
-        logo {
-          asset {
-            url
-          }
-        }
-        menu {
-          ... on SanityNavJumpLink {
-            _key
-            _type
-            isButton
-            link
-            title
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <>
+      <Helmet>
+        <script
+          rel="preload"
+          src="https://kit.fontawesome.com/e4a269ffa7.js"
+          crossOrigin="anonymous"
+          async
+        />
+      </Helmet>
       <GlobalStyle />
       <>{children}</>
-      {/* <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} /> */}
     </>
   );
 };

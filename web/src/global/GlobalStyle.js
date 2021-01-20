@@ -2,11 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   body {
-    font-family: Arial;
+    font-family: Poppins;
   }
 
   h1 {
