@@ -1,5 +1,5 @@
 {
-  "name": "seu",
+  "name": "voltilp",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -10,7 +10,7 @@
     "start": "sanity start",
     "test": "sanity check",
     "deploy": "npm run graphql-deploy && npm run sanity-deploy",
-    "graphql-deploy": "sanity graphql deploy --generation gen2",
+    "graphql-deploy": "sanity graphql deploy --generation gen3",
     "sanity-deploy": "sanity deploy",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -37,6 +37,6 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:SearchEngineUnity/seu.git"
+    "url": "https://github.com/SearchEngineUnity/voti-lp.git"
   }
 }

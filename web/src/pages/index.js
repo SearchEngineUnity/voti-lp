@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../containers/layout';
-import LrHero from '../components/LrHero';
-import LrForm from '../components/LrForm';
-import LrContentBlock from '../components/LrContentBlock';
-import Banner from '../components/Banner';
-import LrCTA from '../components/LrCTA';
-import ContactUs from '../components/ContactUs';
-import LrHeader from '../components/LrHeader';
+import LrHero from '../components/StaticLrHero';
+import LrForm from '../components/StaticLrForm';
+import LrContentBlock from '../components/StaticLrContentBlock';
+import Banner from '../components/StaticBanner';
+import LrCTA from '../components/StaticLrCTA';
+import ContactUs from '../components/StaticContactUs';
 import MainFooter from '../components/MainFooter';
 
 const LandingPage = () => (

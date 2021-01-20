@@ -18,12 +18,19 @@ module.exports = {
     siteUrl,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: process.env.GTM_ID,
+        includeInDevelopment: false,
+      },
+    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'oo9q1e97',
+        projectId: 'a9zzobpf',
         dataset: 'production',
         // To enable preview of drafts, copy .env-example into .env,
         // and add a token with read permissions
@@ -93,17 +100,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: process.env.GTM_ID,
-        includeInDevelopment: false,
-      },
-    },
-    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
         pure: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Poppins`],
+        display: 'swap',
       },
     },
   ],

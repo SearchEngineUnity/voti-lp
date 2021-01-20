@@ -14,12 +14,110 @@ import {
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
   query LandingTemplate($slug: String) {
-    page: sanityPage(slug: { current: { eq: $slug } }) {
+    page: sanityLandingPage(slug: { current: { eq: $slug } }) {
       slug {
         current
       }
+      description
+      facebook {
+        _key
+        _type
+        description
+        title
+        image {
+          asset {
+            url
+          }
+        }
+      }
+      noRobots
+      noSitemap
+      nofollow
+      noindex
+      title
+      twitter {
+        _key
+        _type
+        description
+        title
+      }
+      segments {
+        ... on SanityLrCta {
+          _key
+          _type
+          buttonLink
+          buttonText
+          ctaText
+          idTag
+        }
+        ... on SanityLrHero {
+          _key
+          _type
+          blocks {
+            ... on SanityHeroBlock {
+              _key
+              _type
+              brand {
+                logo {
+                  asset {
+                    fluid {
+                      src
+                    }
+                  }
+                  alt
+                }
+              }
+              text
+              title
+            }
+            ... on SanityIllustration {
+              _key
+              _type
+              alt
+              asset {
+                fluid {
+                  src
+                }
+              }
+            }
+          }
+          idTag
+          layout
+        }
+        ... on SanityLrSegment {
+          _key
+          _type
+          layout
+          idTag
+          blocks {
+            ... on SanityIllustration {
+              _key
+              _type
+              alt
+              asset {
+                fluid {
+                  src
+                }
+              }
+            }
+            ... on SanityPardotForm {
+              _key
+              _type
+              embed
+              height
+              name
+              width
+            }
+            ... on SanitySegmentBlock {
+              _key
+              _type
+              _rawText(resolveReferences: { maxDepth: 12 })
+              title
+            }
+          }
+        }
+      }
     }
-
     site {
       siteMetadata {
         siteUrl
@@ -36,13 +134,13 @@ export default ({ data }) => {
         {data.page.segments.map((segment) => {
           const { _type } = segment;
           switch (_type) {
-            case 'hero':
+            case 'lrHero':
               //   return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
               return <div>This is a Hero</div>;
             case 'lrSegment':
               //   return <LrSegment key={segment._key} {...mapLrSegmentToProps(segment)} />;
               return <div>This is a LR Segment</div>;
-            case 'ctaSegment':
+            case 'lrCta':
               //   return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;
               return <div>This is a CTA</div>;
             default:
