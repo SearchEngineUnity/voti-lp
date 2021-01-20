@@ -61,7 +61,7 @@ export const query = graphql`
                 logo {
                   asset {
                     fluid {
-                      src
+                      ...GatsbySanityImageFluid
                     }
                   }
                   alt
@@ -76,7 +76,7 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  src
+                  ...GatsbySanityImageFluid
                 }
               }
             }
@@ -96,7 +96,7 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  src
+                  ...GatsbySanityImageFluid
                 }
               }
             }
