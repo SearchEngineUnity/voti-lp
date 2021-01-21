@@ -1,14 +1,14 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-// import HeroBlock from './HeroBlock';
-// import ImageBlock from './ImageBlock';
+import SegmentBlock from './SegmentBlock';
+import ImageBlock from './ImageBlock';
 import PardotForm from './PardotForm';
-// import {
-// //   mapHeroBlockToProps,
-// //   mapImageBlockToProps,
-// //   mapCfFormBlockToProps,
-// } from '../lib/mapToProps';
+import {
+  // //   mapHeroBlockToProps,
+  mapImageBlockToProps,
+  // //   mapCfFormBlockToProps,
+} from '../lib/mapToProps';
 
 function LrSegment({ layout, blocks, idTag }) {
   const colArr = layout.split(':').map((el) => parseInt(el, 10));
@@ -16,7 +16,7 @@ function LrSegment({ layout, blocks, idTag }) {
   const colCalculator = (dividen, divisor) => {
     switch (divisor) {
       case 2:
-        return 'col-6';
+        return 'col-lg-6 col-md-6 col-12';
 
       case 3:
         if (dividen === 1) {
@@ -55,16 +55,14 @@ function LrSegment({ layout, blocks, idTag }) {
             const { _type } = block;
             const col = colCalculator(colArr[index], colDivisor);
             switch (_type) {
-              case 'hero':
-                // return <HeroBlock {...mapHeroBlockToProps(col, block)} key={block._key} />;
-                return <h1>This is Hero</h1>;
+              case 'segmentBlock':
+                return <SegmentBlock {...block} col={col} key={block._key} />;
 
               case 'illustration':
-                // return <ImageBlock {...mapImageBlockToProps(col, block)} key={block._key} />;
-                return <h1>This is ImageBlock</h1>;
+                return <ImageBlock {...mapImageBlockToProps(block)} key={block._key} col={col} />;
 
               case 'pardotForm':
-                return <PardotForm {...block} key={block._key} />;
+                return <PardotForm {...block} key={block._key} col={col} />;
 
               default:
                 return <div key="default"> LR block still under development</div>;

@@ -60,9 +60,10 @@ export const query = graphql`
               brand {
                 logo {
                   asset {
-                    fluid {
-                      ...GatsbySanityImageFluid
+                    fixed {
+                      ...GatsbySanityImageFixed
                     }
+                    originalFilename
                   }
                   alt
                 }
@@ -78,6 +79,7 @@ export const query = graphql`
                 fluid {
                   ...GatsbySanityImageFluid
                 }
+                originalFilename
               }
             }
           }
@@ -98,6 +100,7 @@ export const query = graphql`
                 fluid {
                   ...GatsbySanityImageFluid
                 }
+                originalFilename
               }
             }
             ... on SanityPardotForm {

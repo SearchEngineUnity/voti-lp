@@ -55,5 +55,10 @@ export default {
     {
       type: 'illustration',
     },
+    {
+      type: 'reference',
+      title: 'Logo Reference',
+      to: [{ type: 'companyLogo' }],
+    },
   ],
 };
