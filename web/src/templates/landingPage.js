@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../containers/landingLayout';
 import SEO from '../components/Seo';
 // import Hero from '../components/LrHero';
-// import LrSegment from '../components/LrSegment';
+import LrSegment from '../components/LrSegment';
 // import CtaSegment from '../components/CtaSegment';
 import {
   mapSeoToProps,
@@ -138,8 +138,8 @@ export default ({ data }) => {
               //   return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
               return <div>This is a Hero</div>;
             case 'lrSegment':
-              //   return <LrSegment key={segment._key} {...mapLrSegmentToProps(segment)} />;
-              return <div>This is a LR Segment</div>;
+              return <LrSegment key={segment._key} {...segment} />;
+
             case 'lrCta':
               //   return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;
               return <div>This is a CTA</div>;
