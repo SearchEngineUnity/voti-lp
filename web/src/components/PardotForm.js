@@ -8,11 +8,13 @@ const StyledDiv = styled.div`
   justify-content: center;
 `;
 
-function pardotForm({ embed, height, width }) {
+function pardotForm({ embed, height, width, col }) {
   return (
-    <StyledDiv className="mx-auto">
+    // <StyledDiv className="mx-auto">
+    <div className={col}>
       <embed type="text/html" src={embed} height={height} width={width} />
-    </StyledDiv>
+    </div>
+    // </StyledDiv>
   );
 }
 
