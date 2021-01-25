@@ -135,3 +135,14 @@ export function mapImageBlockToProps({ asset, alt }) {
     title: asset?.originalFilename,
   };
 }
+
+// export function mapImageBlockToProps(props) {
+//   console.log('CONSOLE:', props);
+//   const pictureBlock = {
+//     image: props.asset?.fluid,
+//     alt: props.alt,
+//     title: props.asset?.originalFilename,
+//   };
+//   console.log('pictureBlock', pictureBlock);
+//   return pictureBlock;
+// }
