@@ -18,6 +18,12 @@ export default {
       description: 'If you need a line break please use "\\n"',
     },
     {
+      name: 'buttonIcon',
+      title: 'Button Icon',
+      type: 'reference',
+      to: [{ type: 'companyLogo' }],
+    },
+    {
       name: 'buttonText',
       title: 'Button Text',
       type: 'string',
