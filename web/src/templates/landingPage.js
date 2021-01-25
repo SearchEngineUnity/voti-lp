@@ -4,7 +4,7 @@ import Layout from '../containers/landingLayout';
 import SEO from '../components/Seo';
 // import Hero from '../components/LrHero';
 import LrSegment from '../components/LrSegment';
-// import CtaSegment from '../components/CtaSegment';
+import CtaSegment from '../components/CtaSegment';
 import {
   mapSeoToProps,
   // mapHeroToProps,
@@ -144,8 +144,8 @@ export default ({ data }) => {
               return <LrSegment key={segment._key} {...segment} />;
 
             case 'lrCta':
-              //   return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;
-              return <div>This is a CTA</div>;
+              return <CtaSegment key={segment._key} />;
+
             default:
               return <div key="default"> Still under development</div>;
           }
