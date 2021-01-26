@@ -9,7 +9,7 @@ import {
   mapSeoToProps,
   // mapHeroToProps,
   // mapLrSegmentToProps,
-  // mapCtaSegmentToProps,
+  mapCtaSegmentToProps,
 } from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
@@ -45,6 +45,23 @@ export const query = graphql`
         ... on SanityLrCta {
           _key
           _type
+          buttonIcon {
+            logo {
+              asset {
+                fixed {
+                  ...GatsbySanityImageFixed
+                }
+                originalFilename
+                metadata {
+                  dimensions {
+                    width
+                    height
+                  }
+                }
+              }
+              alt
+            }
+          }
           buttonLink
           buttonText
           ctaText
@@ -144,7 +161,7 @@ export default ({ data }) => {
               return <LrSegment key={segment._key} {...segment} />;
 
             case 'lrCta':
-              return <CtaSegment key={segment._key} />;
+              return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;
 
             default:
               return <div key="default"> Still under development</div>;

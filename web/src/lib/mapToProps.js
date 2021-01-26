@@ -151,7 +151,7 @@ export function mapCtaSegmentToProps({ idTag, ctaText, buttonIcon, buttonText, b
   return {
     id: idTag,
     ctaText,
-    buttonIcon,
+    buttonIcon: buttonIcon?.logo,
     buttonText,
     buttonLink,
   };

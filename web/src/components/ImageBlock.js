@@ -13,11 +13,9 @@ const ImgContainer = styled.div`
 
 function ImageBlock({ col, image, alt, title }) {
   return (
-    // <ImgContainer>
     <div className={col}>
       <Img fluid={image} alt={alt} title={title} />
     </div>
-    // </ImgContainer>
   );
 }
 

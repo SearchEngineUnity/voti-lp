@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image/withIEPolyfill';
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import sanityConfig from '../../../sanityConfig';
 
