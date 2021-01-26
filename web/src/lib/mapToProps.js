@@ -146,3 +146,13 @@ export function mapImageBlockToProps({ asset, alt }) {
 //   console.log('pictureBlock', pictureBlock);
 //   return pictureBlock;
 // }
+
+export function mapCtaSegmentToProps({ idTag, ctaText, buttonIcon, buttonText, buttonLink }) {
+  return {
+    id: idTag,
+    ctaText,
+    buttonIcon: buttonIcon?.logo,
+    buttonText,
+    buttonLink,
+  };
+}
