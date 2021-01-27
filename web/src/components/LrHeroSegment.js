@@ -1,8 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
-import SegmentBlock from './SegmentBlock';
-import ImageBlock from './ImageBlock';
+import ImageBlock from './HeroImageBlock';
 import PardotForm from './PardotForm';
 import HeroBlock from './HeroBlock';
 import { mapHeroBlockToProps, mapImageBlockToProps } from '../lib/mapToProps';
