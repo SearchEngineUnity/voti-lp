@@ -10,7 +10,14 @@ export default () =>
       S.listItem()
         .title('Site Settings')
         .icon(MdSettings)
-        .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
+        .child(
+          S.list()
+            .title('Site Settings')
+            .items([
+              S.documentTypeListItem('generalSettings').title('General Settings'),
+              S.documentTypeListItem('colorSet').title('Color Settings'),
+            ]),
+        ),
       S.listItem()
         .title('Company Info')
         .icon(BsInfoSquare)

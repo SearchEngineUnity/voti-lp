@@ -7,8 +7,8 @@ import LrSegment from '../components/LrSegment';
 import CtaSegment from '../components/CtaSegment';
 import {
   mapSeoToProps,
-  // mapHeroToProps,
-  // mapLrSegmentToProps,
+  mapHeroToProps,
+  mapLrSegmentToProps,
   mapCtaSegmentToProps,
 } from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
@@ -108,12 +108,28 @@ export const query = graphql`
           }
           idTag
           layout
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
         }
         ... on SanityLrSegment {
           _key
           _type
           layout
           idTag
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
           blocks {
             ... on SanityIllustration {
               _key
@@ -161,10 +177,10 @@ export default ({ data }) => {
           const { _type } = segment;
           switch (_type) {
             case 'lrHero':
-              return <Hero key={segment._key} {...segment} />;
+              return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
 
             case 'lrSegment':
-              return <LrSegment key={segment._key} {...segment} />;
+              return <LrSegment key={segment._key} {...mapLrSegmentToProps(segment)} />;
 
             case 'lrCta':
               return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;

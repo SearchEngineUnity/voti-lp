@@ -1,45 +1,46 @@
-export function mapHeroToProps({ idTag, title, _rawText, backgroundImage, backgroundColor }) {
+export function mapHeroToProps({ idTag, layout, blocks, color }) {
   return {
-    id: idTag,
-    title,
-    heroText: _rawText,
-    imageURL: backgroundImage?.asset?.url,
-    backgroundColor: backgroundColor?.hex,
+    idTag,
+    layout,
+    blocks,
+    textColor: color.foreground.hex,
+    bgColor: color.background.hex,
   };
 }
 
-export function mapGridToProps({ idTag, title, subtitle, leader, col, design, cards }) {
-  return {
-    leader,
-    title,
-    subtitle,
-    col,
-    design,
-    cards,
-    id: idTag,
-  };
-}
+// export function mapGridToProps({ idTag, title, subtitle, leader, col, design, cards }) {
+//   return {
+//     leader,
+//     title,
+//     subtitle,
+//     col,
+//     design,
+//     cards,
+//     id: idTag,
+//   };
+// }
 
-export function mapTileToProps({ title, cardImage, _key }) {
-  return {
-    title,
-    idTag: _key,
-    image: cardImage?.image?.asset?.url,
-    imageAlt: cardImage?.alt,
-  };
-}
+// export function mapTileToProps({ title, cardImage, _key }) {
+//   return {
+//     title,
+//     idTag: _key,
+//     image: cardImage?.image?.asset?.url,
+//     imageAlt: cardImage?.alt,
+//   };
+// }
 
-export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate }) {
-  return {
-    title: h1,
-    date: displayDate,
-    excerpt,
-    image: cardImage?.mainImage?.image?.asset?.fluid,
-    imageAlt: cardImage?.mainImage?.alt,
-    imageFilename: cardImage?.mainImage?.image?.asset?.originalFilename,
-    url: `/${slug.current}`,
-  };
-}
+// export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate }) {
+//   return {
+//     title: h1,
+//     date: displayDate,
+//     excerpt,
+//     image: cardImage?.mainImage?.image?.asset?.fluid,
+//     imageAlt: cardImage?.mainImage?.alt,
+//     imageFilename: cardImage?.mainImage?.image?.asset?.originalFilename,
+//     url: `/${slug.current}`,
+//   };
+// }
+
 export function mapSeoToProps(
   { title, description, facebook, twitter, slug, noindex, nofollow, canonical, heroImage },
   siteUrl,
@@ -62,71 +63,14 @@ export function mapSeoToProps(
   };
 }
 
-export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
-  return {
-    h1,
-    author,
-    displayDate,
-    image: heroImage?.mainImage?.image?.asset?.url,
-  };
-}
-
-export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
-  return {
-    id: idTag,
-    title,
-    subtitle,
-    form,
-  };
-}
-
-export function mapLrTextImageToProps({ idTag, title, subtitle, order, textDesign, set }) {
-  return {
-    id: idTag,
-    title,
-    subtitle,
-    order: !!order,
-    textDesign,
-    set,
-  };
-}
-
-export function mapTextBoxToProps({ leaderIcon, leaderText, title, subtitle, _rawText }) {
-  return {
-    leaderIcon: leaderIcon?.image?.asset?.url,
-    leaderAlt: leaderIcon?.alt,
-    leaderText,
-    title,
-    subtitle,
-    text: _rawText,
-  };
-}
-
-export function mapImageBoxToProps({ alt, image }) {
-  return {
-    image: image?.asset?.url,
-    alt,
-  };
-}
-
-export function mapMainFooterToProps({ address1, city, email, postalCode, province, name }) {
-  return {
-    address: address1,
-    city,
-    email,
-    postalCode,
-    province,
-    name,
-  };
-}
-
-export function mapMainNavToProps({ title, logo, menu }) {
-  return {
-    name: title,
-    logo: logo?.asset?.url,
-    menu,
-  };
-}
+// export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
+//   return {
+//     h1,
+//     author,
+//     displayDate,
+//     image: heroImage?.mainImage?.image?.asset?.url,
+//   };
+// }
 
 export function mapImageBlockToProps({ asset, alt }) {
   return {
@@ -135,17 +79,6 @@ export function mapImageBlockToProps({ asset, alt }) {
     title: asset?.originalFilename,
   };
 }
-
-// export function mapImageBlockToProps(props) {
-//   console.log('CONSOLE:', props);
-//   const pictureBlock = {
-//     image: props.asset?.fluid,
-//     alt: props.alt,
-//     title: props.asset?.originalFilename,
-//   };
-//   console.log('pictureBlock', pictureBlock);
-//   return pictureBlock;
-// }
 
 export function mapCtaSegmentToProps({ idTag, ctaText, buttonIcon, buttonText, buttonLink }) {
   return {
@@ -162,5 +95,15 @@ export function mapHeroBlockToProps({ brand, text, title }) {
     title,
     text,
     image: brand.logo,
+  };
+}
+
+export function mapLrSegmentToProps({ idTag, layout, blocks, color }) {
+  return {
+    idTag,
+    layout,
+    blocks,
+    textColor: color.foreground.hex,
+    bgColor: color.background.hex,
   };
 }
