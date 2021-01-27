@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import Img from 'gatsby-image/withIEPolyfill';
 
 const ImgContainer = styled.div`
   width: 100%;
@@ -14,7 +14,17 @@ const ImgContainer = styled.div`
 function ImageBlock({ col, image, alt, title }) {
   return (
     <div className={col}>
-      <Img fluid={image} alt={alt} title={title} />
+      <Img
+        fluid={image}
+        alt={alt}
+        title={title}
+        objectFit="contain"
+        imgStyle={{
+          maxWidth: '100%',
+          width: 'auto',
+          height: 'auto',
+        }}
+      />
     </div>
   );
 }
