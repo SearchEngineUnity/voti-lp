@@ -1,11 +1,11 @@
-import { FaBullseye } from 'react-icons/fa';
+import { MdSettings } from 'react-icons/md';
 
 export default {
   name: 'generalSettings',
   type: 'document',
   title: 'General Settings',
   __experimental_actions: ['create', 'update', 'publish'],
-  icon: FaBullseye,
+  icon: MdSettings,
   fieldsets: [
     {
       name: 'general',

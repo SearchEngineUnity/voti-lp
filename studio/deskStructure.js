@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { MdSettings, MdBusiness } from 'react-icons/md';
+import { IoMdColorPalette } from 'react-icons/io';
 import { BsInfoSquare } from 'react-icons/bs';
 import { AiOutlineGlobal } from 'react-icons/ai';
 
@@ -14,8 +15,16 @@ export default () =>
           S.list()
             .title('Site Settings')
             .items([
-              S.documentTypeListItem('generalSettings').title('General Settings'),
-              S.documentTypeListItem('colorSet').title('Color Settings'),
+              S.listItem()
+                .title('General Settings')
+                .icon(MdSettings)
+                .child(
+                  S.editor()
+                    .id('general')
+                    .schemaType('generalSettings')
+                    .documentId('general-settings'),
+                ),
+              S.documentTypeListItem('colorSet').title('Color Settings').icon(IoMdColorPalette),
             ]),
         ),
       S.listItem()
@@ -28,7 +37,9 @@ export default () =>
               S.listItem()
                 .title('Contact Info')
                 .icon(MdBusiness)
-                .child(S.document().schemaType('companyInfo').documentId('companyInfo')),
+                .child(
+                  S.editor().id('contact').schemaType('companyInfo').documentId('companyInfo'),
+                ),
               S.documentTypeListItem('socialInfo').title('Social Info'),
               S.documentTypeListItem('companyLogo').title('Company Logos'),
             ]),
