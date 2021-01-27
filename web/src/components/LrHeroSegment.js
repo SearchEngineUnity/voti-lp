@@ -1,12 +1,18 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import ImageBlock from './HeroImageBlock';
 import PardotForm from './PardotForm';
 import HeroBlock from './HeroBlock';
 import { mapHeroBlockToProps, mapImageBlockToProps } from '../lib/mapToProps';
 
-function LrHeroSegment({ layout, blocks, idTag }) {
+const SegmentContainer = styled.section`
+  color: ${(props) => props.color};
+  background: ${(props) => props.bgColor};
+`;
+
+function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   const colArr = layout.split(':').map((el) => parseInt(el, 10));
   const colDivisor = colArr[0] + colArr[1];
   const colCalculator = (dividen, divisor) => {
@@ -44,7 +50,7 @@ function LrHeroSegment({ layout, blocks, idTag }) {
   };
 
   return (
-    <section id={idTag}>
+    <SegmentContainer id={idTag} className="p-5" color={textColor} bgColor={bgColor}>
       <div className="container">
         <Row style={{ alignItems: 'center', width: 'auto' }}>
           {blocks.map((block, index) => {
@@ -66,7 +72,7 @@ function LrHeroSegment({ layout, blocks, idTag }) {
           })}
         </Row>
       </div>
-    </section>
+    </SegmentContainer>
   );
 }
 

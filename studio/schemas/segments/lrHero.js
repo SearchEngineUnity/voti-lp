@@ -27,6 +27,12 @@ export default {
         list: ['7:5', '3:1', '2:1', '1:1', '1:2', '1:3'],
       },
     },
+    {
+      name: 'color',
+      title: 'Color Setting',
+      type: 'reference',
+      to: [{ type: 'colorSet' }],
+    },
   ],
   preview: {
     select: {
