@@ -1,6 +1,9 @@
+import { SiAdobelightroomclassic } from 'react-icons/si';
+
 export default {
   name: 'lrSegment',
   title: 'Left Right Segment',
+  icon: SiAdobelightroomclassic,
   description: 'Use composites when you want to put two different blocks side by side.',
   type: 'object',
   fields: [
@@ -37,11 +40,12 @@ export default {
   preview: {
     select: {
       subtitle: '_type',
+      id: 'idTag',
     },
-    prepare({ subtitle }) {
+    prepare({ id, subtitle }) {
       return {
         subtitle,
-        title: 'LR Segment',
+        title: `ID: ${id}`,
       };
     },
   },

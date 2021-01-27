@@ -4,7 +4,7 @@ export default {
   name: 'companyInfo',
   title: 'Contact Info',
   type: 'document',
-  __experimental_actions: ['update', 'publish'],
+  __experimental_actions: ['create', 'update', 'publish'],
   icon: MdBusiness,
   fields: [
     {
@@ -75,4 +75,12 @@ export default {
       type: 'url',
     },
   ],
+  preview: {
+    select: {},
+    prepare() {
+      return {
+        title: `Contact Info`,
+      };
+    },
+  },
 };

@@ -1,7 +1,10 @@
+import { IoMdColorPalette } from 'react-icons/io';
+
 export default {
   name: 'colorSet',
   title: 'Color Set',
   type: 'document',
+  icon: IoMdColorPalette,
   fields: [
     {
       name: 'title',
@@ -23,5 +26,10 @@ export default {
     select: {
       title: 'title',
     },
+  },
+  prepare(title) {
+    return {
+      title,
+    };
   },
 };
