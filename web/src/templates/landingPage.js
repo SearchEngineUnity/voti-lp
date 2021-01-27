@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../containers/landingLayout';
 import SEO from '../components/Seo';
-// import Hero from '../components/LrHero';
+import Hero from '../components/LrHeroSegment';
 import LrSegment from '../components/LrSegment';
 import CtaSegment from '../components/CtaSegment';
 import {
@@ -81,6 +81,12 @@ export const query = graphql`
                       ...GatsbySanityImageFixed
                     }
                     originalFilename
+                    metadata {
+                      dimensions {
+                        width
+                        height
+                      }
+                    }
                   }
                   alt
                 }
@@ -155,8 +161,8 @@ export default ({ data }) => {
           const { _type } = segment;
           switch (_type) {
             case 'lrHero':
-              //   return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
-              return <div>This is a Hero</div>;
+              return <Hero key={segment._key} {...segment} />;
+
             case 'lrSegment':
               return <LrSegment key={segment._key} {...segment} />;
 

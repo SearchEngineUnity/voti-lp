@@ -156,3 +156,11 @@ export function mapCtaSegmentToProps({ idTag, ctaText, buttonIcon, buttonText, b
     buttonLink,
   };
 }
+
+export function mapHeroBlockToProps({ brand, text, title }) {
+  return {
+    title,
+    text,
+    image: brand.logo,
+  };
+}
