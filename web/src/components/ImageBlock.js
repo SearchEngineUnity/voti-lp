@@ -14,17 +14,7 @@ const ImgContainer = styled.div`
 function ImageBlock({ col, image, alt, title }) {
   return (
     <div className={col}>
-      <Img
-        fluid={image}
-        alt={alt}
-        title={title}
-        objectFit="contain"
-        imgStyle={{
-          maxWidth: '100%',
-          width: 'auto',
-          height: 'auto',
-        }}
-      />
+      <Img fluid={image} alt={alt} title={title} />
     </div>
   );
 }
