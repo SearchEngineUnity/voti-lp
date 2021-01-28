@@ -2,27 +2,98 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import FixedImage from './IllustrationFixed';
-// import styled from 'styled-components';
 
-function CtaSegment({ ctaText, buttonText, buttonIcon, buttonLink, id }) {
+const SegmentContainer = styled.section`
+  color: ${(props) => props.color};
+  background: ${(props) => props.bgColor};
+`;
+
+const StyledCtaText = styled.p`
+  line-height: 1.1;
+  font-size: 60px;
+  font-weight: 500;
+
+  @media (max-width: 1180px) {
+    font-size: 38px;
+  }
+  @media (max-width: 991px) {
+    font-size: 38px;
+  }
+  @media (max-width: 767px) {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 600px) {
+    font-size: 30px;
+    line-height: normal !important;
+  }
+`;
+
+const StyledBtnText = styled.span`
+  font-size: 1.2rem;
+  min-width: 250px;
+  padding: 20px 0;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #fff;
+  display: block;
+  letter-spacing: 2px;
+  font-weight: 300;
+
+  @media (max-width: 991px) {
+    font-size: 16px;
+    min-width: auto;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+  }
+`;
+
+const StyledBtnIcon = styled.span`
+  transition: all 0.3s ease;
+  border: 1px solid #fff;
+  padding: 20px 24px;
+  display: block;
+  letter-spacing: 2px;
+  font-weight: 300;
+  @media (max-width: 991px) {
+    padding: 10px;
+    display: inline-block;
+  }
+`;
+
+const StyledA = styled.a`
+  &:hover {
+    background: #193753;
+    text-decoration: none;
+  }
+`;
+
+function CtaSegment({ ctaText, buttonText, buttonIcon, buttonLink, id, textColor, bgColor }) {
   return (
-    <section id={id} className="p-5" style={{ color: 'white', backgroundColor: '#3c6286' }}>
+    <SegmentContainer id={id} className="py-5" color={textColor} bgColor={bgColor}>
       <Container>
-        <Row>
+        <Row className="align-items-center">
           <Col md={6} sm={12}>
-            <p className="font-weight-bold">{ctaText}</p>
+            <StyledCtaText>{ctaText}</StyledCtaText>
           </Col>
-          <Col md={6} sm={12} className="text-center font-weight-light text-dark">
-            <a href={buttonLink} className="d-table table-hover mx-auto text-white">
-              <span className="p-2 border">
-                <FixedImage image={buttonIcon} />
-              </span>
-              <p className="p-2 d-inline border">{buttonText}</p>
-            </a>
+          <Col md={6} sm={12} className="text-center font-weight-light">
+            <div style={{ alignItems: 'centre', height: '100%' }}>
+              <StyledA
+                href={buttonLink}
+                className={`${textColor === '#ffffff' ? 'text-white' : 'text-dark'} d-inline-flex`}
+              >
+                <StyledBtnIcon>
+                  <FixedImage image={buttonIcon} />
+                </StyledBtnIcon>
+                <StyledBtnText>{buttonText}</StyledBtnText>
+              </StyledA>
+            </div>
           </Col>
         </Row>
       </Container>
-    </section>
+    </SegmentContainer>
   );
 }
 

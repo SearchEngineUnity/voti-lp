@@ -21,6 +21,16 @@ export default createGlobalStyle`
     border-top: 1px solid white;
   }
 
+  .container {
+    max-width: 1200px;
+  }
+
+  @media (max-width: 1200px) {
+    .container {
+      max-width: 94%;
+    }
+  }
+
   @media screen and ( max-width: 991px ) {
     img.responsive { width: 300px; }
     }
