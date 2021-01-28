@@ -11,7 +11,7 @@ function HeroBlock({ col, title, text, image }) {
   return (
     <div className={col}>
       <a href="https://votidetection.com/" className="mb-4 d-block">
-        <IllustrationFixed image={image} />
+        <IllustrationFixed image={image} loading="eagar" />
       </a>
       <StyledH1 className="mb-4">{title}</StyledH1>
       <p>{text}</p>
