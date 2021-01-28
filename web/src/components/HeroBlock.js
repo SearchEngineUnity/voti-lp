@@ -6,10 +6,10 @@ import IllustrationFixed from './IllustrationFixed';
 function HeroBlock({ col, title, text, image }) {
   return (
     <div className={col}>
-      <a href="https://votidetection.com/">
+      <a href="https://votidetection.com/" className="pb-4 d-block">
         <IllustrationFixed image={image} />
       </a>
-      <h1>{title}</h1>
+      <h1 className="pb-3">{title}</h1>
       <p>{text}</p>
     </div>
   );

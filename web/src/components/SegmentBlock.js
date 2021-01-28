@@ -6,7 +6,7 @@ import BlockContent from './block-contents/SegmentSerializer';
 function SegmentBlock({ col, title, _rawText }) {
   return (
     <div className={col}>
-      <h2>{title}</h2>
+      <h2 className="pb-3">{title}</h2>
       <BlockContent blocks={_rawText} />
     </div>
   );
