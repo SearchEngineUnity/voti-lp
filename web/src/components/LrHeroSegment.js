@@ -50,7 +50,7 @@ function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   };
 
   return (
-    <SegmentContainer id={idTag} className="p-5" color={textColor} bgColor={bgColor}>
+    <SegmentContainer id={idTag} className="py-5" color={textColor} bgColor={bgColor}>
       <div className="container">
         <Row style={{ alignItems: 'center', width: 'auto' }}>
           {blocks.map((block, index) => {

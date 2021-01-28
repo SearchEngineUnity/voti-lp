@@ -15,7 +15,6 @@ const NoIndentUl = styled.ul`
 const serializers = {
   types: {
     block({ children }) {
-      console.log(children);
       return children[0] ? <p>{children}</p> : <br />;
     },
     illustration({ node }) {

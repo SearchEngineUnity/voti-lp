@@ -36,6 +36,12 @@ export default {
       title: 'Button Link',
       type: 'url',
     },
+    {
+      name: 'color',
+      title: 'Color Setting',
+      type: 'reference',
+      to: [{ type: 'colorSet' }],
+    },
   ],
   preview: {
     select: {

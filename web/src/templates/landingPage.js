@@ -66,6 +66,14 @@ export const query = graphql`
           buttonText
           ctaText
           idTag
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
         }
         ... on SanityLrHero {
           _key

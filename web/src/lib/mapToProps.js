@@ -80,13 +80,22 @@ export function mapImageBlockToProps({ asset, alt }) {
   };
 }
 
-export function mapCtaSegmentToProps({ idTag, ctaText, buttonIcon, buttonText, buttonLink }) {
+export function mapCtaSegmentToProps({
+  idTag,
+  ctaText,
+  buttonIcon,
+  buttonText,
+  buttonLink,
+  color,
+}) {
   return {
     id: idTag,
     ctaText,
     buttonIcon: buttonIcon?.logo,
     buttonText,
     buttonLink,
+    textColor: color.foreground.hex,
+    bgColor: color.background.hex,
   };
 }
 
