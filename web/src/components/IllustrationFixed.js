@@ -14,6 +14,7 @@ function IllustrationFixed({ image, loading }) {
       alt={image.alt}
       title={image.asset.originalFilename}
       loading={loading || 'lazy'}
+      critical={!!loading}
     />
   );
 }

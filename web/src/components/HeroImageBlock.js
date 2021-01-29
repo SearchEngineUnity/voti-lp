@@ -9,7 +9,7 @@ function HeroImageBlock({ col, image, alt, title }) {
     <div className={col}>
       <Row>
         <Col sm={6} md={8} lg={6} className="mx-auto">
-          <Img fluid={image} alt={alt} title={title} loading="eager" />
+          <Img fluid={image} alt={alt} title={title} loading="eager" critical />
         </Col>
       </Row>
     </div>
