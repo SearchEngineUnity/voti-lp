@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../containers/landingLayout';
+import Layout from '../containers/listingLayout';
 import SEO from '../components/Seo';
-import Hero from '../components/StaticLrHero';
+import Hero from '../components/LrHeroSegment';
 import { mapSeoToProps, mapHeroToProps } from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
@@ -10,6 +10,162 @@ export const query = graphql`
     page: sanityListingPage(slug: { current: { eq: $slug } }) {
       slug {
         current
+      }
+      description
+      facebook {
+        _key
+        _type
+        description
+        title
+        image {
+          asset {
+            url
+          }
+        }
+      }
+      noRobots
+      noSitemap
+      nofollow
+      noindex
+      title
+      twitter {
+        _key
+        _type
+        description
+        title
+      }
+      segments {
+        ... on SanityLrCta {
+          _key
+          _type
+          buttonIcon {
+            logo {
+              asset {
+                fixed {
+                  ...GatsbySanityImageFixed
+                }
+                originalFilename
+                metadata {
+                  dimensions {
+                    width
+                    height
+                  }
+                }
+              }
+              alt
+            }
+          }
+          buttonLink
+          buttonText
+          ctaText
+          idTag
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
+        }
+        ... on SanityLrHero {
+          _key
+          _type
+          blocks {
+            ... on SanityHeroBlock {
+              _key
+              _type
+              brand {
+                logo {
+                  asset {
+                    fixed {
+                      ...GatsbySanityImageFixed
+                    }
+                    originalFilename
+                    metadata {
+                      dimensions {
+                        width
+                        height
+                      }
+                    }
+                  }
+                  alt
+                }
+              }
+              text
+              title
+            }
+            ... on SanityIllustration {
+              _key
+              _type
+              alt
+              asset {
+                fluid {
+                  ...GatsbySanityImageFluid
+                }
+                originalFilename
+              }
+            }
+          }
+          idTag
+          layout
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
+        }
+        ... on SanityLrSegment {
+          _key
+          _type
+          layout
+          idTag
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
+          blocks {
+            ... on SanityIllustration {
+              _key
+              _type
+              alt
+              asset {
+                fluid {
+                  ...GatsbySanityImageFluid
+                }
+                originalFilename
+              }
+            }
+            ... on SanityPardotForm {
+              _key
+              _type
+              embed
+              height
+              name
+              width
+            }
+            ... on SanitySegmentBlock {
+              _key
+              _type
+              _rawText(resolveReferences: { maxDepth: 12 })
+              title
+            }
+          }
+        }
+        ... on SanityLandingList {
+          _key
+          _type
+          icon
+          idTag
+          title
+        }
       }
     }
     site {
@@ -23,13 +179,13 @@ export default ({ data }) => {
   const type = 'page';
   return (
     <Layout>
-      {/* <SEO {...mapSeoToProps(data.page, data.site.siteMetadata.siteUrl, type)} />
+      <SEO {...mapSeoToProps(data.page, data.site.siteMetadata.siteUrl, type)} />
       <main>
         {data.page.segments.map((segment) => {
           const { _type } = segment;
           switch (_type) {
-            case 'hero':
-              return <div>This is a Hero component</div>;
+            case 'lrHero':
+              return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
             case 'lrSegment':
               return <div>This is a LR Segment</div>;
             // return <LrSegment key={segment._key} {...mapLrSegmentToProps(segment)} />;
@@ -40,8 +196,7 @@ export default ({ data }) => {
               return <div key="default"> Still under development</div>;
           }
         })}
-      </main> */}
-      <div>Listing page under construction</div>
+      </main>
     </Layout>
   );
 };
