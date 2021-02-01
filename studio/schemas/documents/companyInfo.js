@@ -15,7 +15,7 @@ export default {
     {
       name: 'email',
       title: 'Email',
-      type: 'email',
+      type: 'string',
     },
     {
       name: 'phone',
