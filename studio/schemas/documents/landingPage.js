@@ -97,10 +97,12 @@ export default {
       fieldsest: 'segments',
       title: 'Segments',
       of: [
-        ...Object.values(segments).map(({ name, title }) => ({
-          type: name,
-          title,
-        })),
+        ...Object.values(segments)
+          .filter(({ name }) => name !== 'landingList')
+          .map(({ name, title }) => ({
+            type: name,
+            title,
+          })),
       ],
     },
     {
