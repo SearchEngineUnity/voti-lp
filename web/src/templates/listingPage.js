@@ -3,7 +3,8 @@ import { graphql } from 'gatsby';
 import Layout from '../containers/listingLayout';
 import SEO from '../components/Seo';
 import Hero from '../components/LrHeroSegment';
-import { mapSeoToProps, mapHeroToProps } from '../lib/mapToProps';
+import ListSegment from '../components/ListSegment';
+import { mapSeoToProps, mapHeroToProps, mapListSegmentToProps } from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
   query ListingTemplate($slug: String) {
@@ -159,12 +160,45 @@ export const query = graphql`
             }
           }
         }
-        ... on SanityLandingList {
+        ... on SanityListSegment {
           _key
           _type
+          cardType
           icon
           idTag
           title
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
+          list {
+            _id
+            cardImage {
+              alt
+              asset {
+                fluid {
+                  src
+                }
+              }
+            }
+            segments {
+              ... on SanityLrHero {
+                _key
+                _type
+                blocks {
+                  ... on SanityHeroBlock {
+                    _key
+                    _type
+                    title
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -192,6 +226,8 @@ export default ({ data }) => {
             case 'ctaSegment':
               return <div>This is a CTA</div>;
             // return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;
+            case 'listSegment':
+              return <ListSegment key={segment._key} {...mapListSegmentToProps(segment)} />;
             default:
               return <div key="default"> Still under development</div>;
           }

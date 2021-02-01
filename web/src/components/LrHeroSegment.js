@@ -1,16 +1,11 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import SegmentContainer from './SegmentContainer';
 import ImageBlock from './HeroImageBlock';
 import PardotForm from './PardotForm';
 import HeroBlock from './HeroBlock';
 import { mapHeroBlockToProps, mapImageBlockToProps } from '../lib/mapToProps';
-
-const SegmentContainer = styled.section`
-  color: ${(props) => props.color};
-  background: ${(props) => props.bgColor};
-`;
 
 function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   const colArr = layout.split(':').map((el) => parseInt(el, 10));
@@ -50,7 +45,7 @@ function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   };
 
   return (
-    <SegmentContainer id={idTag} className="py-5" color={textColor} bgColor={bgColor}>
+    <SegmentContainer id={idTag} color={textColor} bgColor={bgColor}>
       <div className="container">
         <Row style={{ alignItems: 'center', width: 'auto' }}>
           {blocks.map((block, index) => {
