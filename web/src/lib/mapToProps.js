@@ -116,3 +116,25 @@ export function mapLrSegmentToProps({ idTag, layout, blocks, color }) {
     bgColor: color.background.hex,
   };
 }
+
+export function mapListSegmentToProps({ idTag, title, icon, cardType, list, color }) {
+  return {
+    idTag,
+    title,
+    icon,
+    cards: list,
+    cardType,
+    textColor: color.foreground.hex,
+    bgColor: color.background.hex,
+  };
+}
+
+export function mapCardToProps({ cardImage, segments }) {
+  return {
+    title: segments
+      .filter((segment) => segment._type === 'lrHero')[0]
+      .filter((block) => block._type === 'heroBlock')[0].title,
+    image: cardImage.asset.fluid.src,
+    imageAlt: cardImage.alt,
+  };
+}
