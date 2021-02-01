@@ -26,6 +26,33 @@ async function createLandingPages(actions, graphql) {
   });
 }
 
+// create all landing pages
+async function createListingPages(actions, graphql) {
+  const { data } = await graphql(`
+    {
+      allSanityListingPage {
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+  const pages = data.allSanityListingPage.edges;
+  pages.forEach((page) => {
+    actions.createPage({
+      path: page.node.slug.current === '/' ? '/' : `/${page.node.slug.current}`,
+      component: path.resolve(`./src/templates/listingPage.js`),
+      context: {
+        slug: page.node.slug.current,
+      },
+    });
+  });
+}
+
 // create redirect
 async function createPageRedirects(actions, graphql) {
   const { data } = await graphql(`
@@ -59,5 +86,6 @@ async function createPageRedirects(actions, graphql) {
 
 exports.createPages = async ({ actions, graphql }) => {
   await createLandingPages(actions, graphql);
+  await createListingPages(actions, graphql);
   await createPageRedirects(actions, graphql);
 };

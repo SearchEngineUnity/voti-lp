@@ -103,7 +103,7 @@ export function mapHeroBlockToProps({ brand, text, title }) {
   return {
     title,
     text,
-    image: brand.logo,
+    image: brand?.logo,
   };
 }
 
