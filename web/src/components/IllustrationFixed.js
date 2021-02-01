@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image/withIEPolyfill';
 import styled from 'styled-components';
 
-function IllustrationFixed({ image }) {
+function IllustrationFixed({ image, loading }) {
   return (
     <Img
       fixed={image.asset.fixed}
@@ -13,6 +13,8 @@ function IllustrationFixed({ image }) {
       objectFit="contain"
       alt={image.alt}
       title={image.asset.originalFilename}
+      loading={loading || 'lazy'}
+      critical={!!loading}
     />
   );
 }
