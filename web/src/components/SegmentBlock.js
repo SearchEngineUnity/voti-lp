@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import styled from 'styled-components';
 import BlockContent from './block-contents/SegmentSerializer';
 
 function SegmentBlock({ col, title, _rawText }) {
   return (
     <div className={col}>
-      <h2 className="mb-4">{title}</h2>
+      <h2 className="mb-4 text-break">{title.replace(/-/g, '‑')}</h2>
       <BlockContent blocks={_rawText} />
     </div>
   );
