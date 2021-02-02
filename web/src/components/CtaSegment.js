@@ -62,7 +62,7 @@ function CtaSegment({ ctaText, buttonText, buttonIcon, buttonLink, id, textColor
     <SegmentContainer id={id} className="py-5" color={textColor} bgColor={bgColor}>
       <Row className="align-items-center">
         <Col md={6} sm={12}>
-          <StyledCtaText className="h2">{ctaText}</StyledCtaText>
+          <StyledCtaText className="h2">{ctaText.replace(/-/g, '‑')}</StyledCtaText>
         </Col>
         <Col md={6} sm={12} className="text-center font-weight-light">
           <div className="align-items-center h-100">

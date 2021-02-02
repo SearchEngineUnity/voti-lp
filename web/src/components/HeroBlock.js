@@ -15,8 +15,8 @@ function HeroBlock({ col, title, text, image }) {
           <IllustrationFixed image={image} loading="eagar" />
         </a>
       )}
-      <StyledH1 className="mb-4">{title}</StyledH1>
-      <p>{text}</p>
+      <StyledH1 className="mb-4">{title.replace(/-/g, '‑')}</StyledH1>
+      <p>{text.replace(/-/g, '‑')}</p>
     </div>
   );
 }
