@@ -6,23 +6,14 @@ import SegmentContainer from './SegmentContainer';
 
 const StyledCtaText = styled.p`
   line-height: 1.1;
-  font-size: 60px;
   font-weight: 500;
 
-  @media (max-width: 1180px) {
-    font-size: 38px;
-  }
-  @media (max-width: 991px) {
-    font-size: 38px;
-  }
   @media (max-width: 767px) {
-    font-size: 35px;
     text-align: center;
     margin-bottom: 30px;
   }
   @media (max-width: 600px) {
-    font-size: 30px;
-    line-height: normal !important;
+    line-height: 1.3 !important;
   }
 `;
 
@@ -71,7 +62,7 @@ function CtaSegment({ ctaText, buttonText, buttonIcon, buttonLink, id, textColor
     <SegmentContainer id={id} className="py-5" color={textColor} bgColor={bgColor}>
       <Row className="align-items-center">
         <Col md={6} sm={12}>
-          <StyledCtaText>{ctaText}</StyledCtaText>
+          <StyledCtaText className="h2">{ctaText}</StyledCtaText>
         </Col>
         <Col md={6} sm={12} className="text-center font-weight-light">
           <div className="align-items-center h-100">
