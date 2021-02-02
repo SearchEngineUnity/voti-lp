@@ -133,8 +133,9 @@ export function mapCardToProps({ cardImage, segments }) {
   return {
     title: segments
       .filter((segment) => segment._type === 'lrHero')[0]
-      .filter((block) => block._type === 'heroBlock')[0].title,
-    image: cardImage.asset.fluid.src,
+      .blocks.filter((block) => block._type === 'heroBlock')[0].title,
+    image: cardImage.asset.fluid,
     imageAlt: cardImage.alt,
+    filename: cardImage.asset.originalFilename,
   };
 }

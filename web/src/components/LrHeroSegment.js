@@ -45,28 +45,26 @@ function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   };
 
   return (
-    <SegmentContainer id={idTag} color={textColor} bgColor={bgColor}>
-      <div className="container">
-        <Row style={{ alignItems: 'center', width: 'auto' }}>
-          {blocks.map((block, index) => {
-            const { _type } = block;
-            const col = colCalculator(colArr[index], colDivisor);
-            switch (_type) {
-              case 'pardotForm':
-                return <PardotForm {...block} col={col} key={block._key} />;
+    <SegmentContainer idTag={idTag} color={textColor} bgColor={bgColor}>
+      <Row className="align-items-center">
+        {blocks.map((block, index) => {
+          const { _type } = block;
+          const col = colCalculator(colArr[index], colDivisor);
+          switch (_type) {
+            case 'pardotForm':
+              return <PardotForm {...block} col={col} key={block._key} />;
 
-              case 'illustration':
-                return <ImageBlock {...mapImageBlockToProps(block)} key={block._key} col={col} />;
+            case 'illustration':
+              return <ImageBlock {...mapImageBlockToProps(block)} key={block._key} col={col} />;
 
-              case 'heroBlock':
-                return <HeroBlock {...mapHeroBlockToProps(block)} key={block._key} col={col} />;
+            case 'heroBlock':
+              return <HeroBlock {...mapHeroBlockToProps(block)} key={block._key} col={col} />;
 
-              default:
-                return <div key="default"> LR block still under development</div>;
-            }
-          })}
-        </Row>
-      </div>
+            default:
+              return <div key="default"> LR block still under development</div>;
+          }
+        })}
+      </Row>
     </SegmentContainer>
   );
 }

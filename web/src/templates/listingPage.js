@@ -43,7 +43,7 @@ export const query = graphql`
             logo {
               asset {
                 fixed {
-                  src
+                  ...GatsbySanityImageFixed
                 }
                 originalFilename
                 metadata {
@@ -80,7 +80,7 @@ export const query = graphql`
                 logo {
                   asset {
                     fixed {
-                      src
+                      ...GatsbySanityImageFixed
                     }
                     originalFilename
                     metadata {
@@ -102,7 +102,7 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  src
+                  ...GatsbySanityImageFluid
                 }
                 originalFilename
               }
@@ -139,7 +139,7 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  src
+                  ...GatsbySanityImageFluid
                 }
                 originalFilename
               }
@@ -181,8 +181,9 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  src
+                  ...GatsbySanityImageFluid
                 }
+                originalFilename
               }
             }
             segments {
