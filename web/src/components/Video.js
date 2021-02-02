@@ -5,7 +5,7 @@ function Video({ title, image, imageAlt }) {
   return (
     <Card>
       {image && <Card.Img alt={imageAlt} src={image} />}
-      <Card.Body>{title && <Card.Title>{title}</Card.Title>}</Card.Body>
+      <Card.Body>{title && <Card.Title>Under construction</Card.Title>}</Card.Body>
     </Card>
   );
 }
