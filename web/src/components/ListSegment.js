@@ -17,7 +17,7 @@ function ListSegment({ idTag, title, icon, cards, cardType, textColor, bgColor }
 
       case 'Landing Page':
         return (
-          <Col xs={12} md={6} lg={4} style={{ paddingBottom: '30px' }}>
+          <Col xs={12} md={6} lg={4} className="mb-4">
             <Landing key={card._id} {...mapCardToProps(card)} />
           </Col>
         );
@@ -29,8 +29,8 @@ function ListSegment({ idTag, title, icon, cards, cardType, textColor, bgColor }
 
   return (
     <SegmentContainer idTag={idTag} textColor={textColor} bgColor={bgColor}>
-      <h2 className="pb-3 h3">
-        <i className={`pr-3 ${icon}`} />
+      <h2 className="mb-3 h3">
+        <i className={`mr-3 ${icon}`} />
         {title}
       </h2>
       <Row>{cards.map((card) => componentTypeSwitch(cardType, card))}</Row>
