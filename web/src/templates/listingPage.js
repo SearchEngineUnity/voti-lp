@@ -181,8 +181,9 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  src
+                  ...GatsbySanityImageFluid
                 }
+                originalFilename
               }
             }
             segments {

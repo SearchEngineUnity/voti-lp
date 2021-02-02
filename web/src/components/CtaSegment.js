@@ -49,7 +49,7 @@ const StyledBtnIcon = styled.span`
   transition: all 0.3s ease;
   border: 1px solid #fff;
   padding: 20px 24px;
-  display: block;
+  display: inline-block;
   letter-spacing: 2px;
   font-weight: 300;
   align-items: center;

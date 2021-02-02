@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Container } from 'react-bootstrap';
-import Landing from './Landing';
+import { Row, Col } from 'react-bootstrap';
+import Landing from './LandingCard';
 import Brochure from './Brochure';
 import Video from './Video';
 import { mapCardToProps } from '../lib/mapToProps';
@@ -15,8 +15,12 @@ function ListSegment({ idTag, title, icon, cards, cardType, textColor, bgColor }
       case 'Video':
         return <Video key={card._id} {...mapCardToProps(card)} />;
 
-      case 'Landing':
-        return <Landing key={card._id} {...mapCardToProps(card)} />;
+      case 'Landing Page':
+        return (
+          <Col xs={12} md={6} lg={4} style={{ paddingBottom: '30px' }}>
+            <Landing key={card._id} {...mapCardToProps(card)} />
+          </Col>
+        );
 
       default:
         return <div>List undefined</div>;
@@ -25,8 +29,10 @@ function ListSegment({ idTag, title, icon, cards, cardType, textColor, bgColor }
 
   return (
     <SegmentContainer idTag={idTag} textColor={textColor} bgColor={bgColor}>
-      <i className={icon} />
-      <h2 className="text-center">{title}</h2>
+      <h2 className="pb-3 h3">
+        <i className={`pr-3 ${icon}`} />
+        {title}
+      </h2>
       <Row>{cards.map((card) => componentTypeSwitch(cardType, card))}</Row>
     </SegmentContainer>
   );
