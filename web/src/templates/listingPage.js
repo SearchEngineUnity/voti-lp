@@ -177,6 +177,9 @@ export const query = graphql`
           }
           list {
             _id
+            slug {
+              current
+            }
             cardImage {
               alt
               asset {

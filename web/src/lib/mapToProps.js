@@ -129,7 +129,7 @@ export function mapListSegmentToProps({ idTag, title, icon, cardType, list, colo
   };
 }
 
-export function mapCardToProps({ cardImage, segments }) {
+export function mapCardToProps({ cardImage, segments, slug }) {
   return {
     title: segments
       .filter((segment) => segment._type === 'lrHero')[0]
@@ -137,5 +137,6 @@ export function mapCardToProps({ cardImage, segments }) {
     image: cardImage.asset.fluid,
     imageAlt: cardImage.alt,
     filename: cardImage.asset.originalFilename,
+    url: slug.current,
   };
 }
