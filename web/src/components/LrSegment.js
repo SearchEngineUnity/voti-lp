@@ -1,16 +1,11 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import SegmentBlock from './SegmentBlock';
 import ImageBlock from './ImageBlock';
 import PardotForm from './PardotForm';
+import SegmentContainer from './SegmentContainer';
 import { mapImageBlockToProps } from '../lib/mapToProps';
-
-const SegmentContainer = styled.section`
-  color: ${(props) => props.color};
-  background: ${(props) => props.bgColor};
-`;
 
 function LrSegment({ layout, blocks, idTag, textColor, bgColor }) {
   const colArr = layout.split(':').map((el) => parseInt(el, 10));
@@ -56,27 +51,25 @@ function LrSegment({ layout, blocks, idTag, textColor, bgColor }) {
       color={textColor}
       bgColor={bgColor}
     >
-      <div className="container">
-        <Row style={{ alignItems: 'center', width: 'auto' }}>
-          {blocks.map((block, index) => {
-            const { _type } = block;
-            const col = colCalculator(colArr[index], colDivisor);
-            switch (_type) {
-              case 'segmentBlock':
-                return <SegmentBlock {...block} col={col} key={block._key} />;
+      <Row className="align-items-center">
+        {blocks.map((block, index) => {
+          const { _type } = block;
+          const col = colCalculator(colArr[index], colDivisor);
+          switch (_type) {
+            case 'segmentBlock':
+              return <SegmentBlock {...block} col={col} key={block._key} />;
 
-              case 'illustration':
-                return <ImageBlock {...mapImageBlockToProps(block)} key={block._key} col={col} />;
+            case 'illustration':
+              return <ImageBlock {...mapImageBlockToProps(block)} key={block._key} col={col} />;
 
-              case 'pardotForm':
-                return <PardotForm {...block} key={block._key} col={col} />;
+            case 'pardotForm':
+              return <PardotForm {...block} key={block._key} col={col} />;
 
-              default:
-                return <div key="default"> LR block still under development</div>;
-            }
-          })}
-        </Row>
-      </div>
+            default:
+              return <div key="default"> LR block still under development</div>;
+          }
+        })}
+      </Row>
     </SegmentContainer>
   );
 }

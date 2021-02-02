@@ -25,11 +25,9 @@ function ListSegment({ idTag, title, icon, cards, cardType, textColor, bgColor }
 
   return (
     <SegmentContainer idTag={idTag} textColor={textColor} bgColor={bgColor}>
-      <Container>
-        <i className={icon} />
-        <h2 className="text-center">{title}</h2>
-        <Row>{cards.map((card) => componentTypeSwitch(cardType, card))}</Row>
-      </Container>
+      <i className={icon} />
+      <h2 className="text-center">{title}</h2>
+      <Row>{cards.map((card) => componentTypeSwitch(cardType, card))}</Row>
     </SegmentContainer>
   );
 }

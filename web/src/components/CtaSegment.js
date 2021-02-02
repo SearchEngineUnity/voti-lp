@@ -2,11 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import FixedImage from './IllustrationFixed';
-
-const SegmentContainer = styled.section`
-  color: ${(props) => props.color};
-  background: ${(props) => props.bgColor};
-`;
+import SegmentContainer from './SegmentContainer';
 
 const StyledCtaText = styled.p`
   line-height: 1.1;
@@ -45,7 +41,6 @@ const StyledBtnText = styled.span`
     font-size: 16px;
     min-width: auto;
     padding: 10px;
-    text-align: center;
     display: inline-block;
   }
 `;
@@ -57,6 +52,7 @@ const StyledBtnIcon = styled.span`
   display: block;
   letter-spacing: 2px;
   font-weight: 300;
+  align-items: center;
   @media (max-width: 991px) {
     padding: 10px;
     display: inline-block;
@@ -73,26 +69,24 @@ const StyledA = styled.a`
 function CtaSegment({ ctaText, buttonText, buttonIcon, buttonLink, id, textColor, bgColor }) {
   return (
     <SegmentContainer id={id} className="py-5" color={textColor} bgColor={bgColor}>
-      <Container>
-        <Row className="align-items-center">
-          <Col md={6} sm={12}>
-            <StyledCtaText>{ctaText}</StyledCtaText>
-          </Col>
-          <Col md={6} sm={12} className="text-center font-weight-light">
-            <div style={{ alignItems: 'centre', height: '100%' }}>
-              <StyledA
-                href={buttonLink}
-                className={`${textColor === '#ffffff' ? 'text-white' : 'text-dark'} d-inline-flex`}
-              >
-                <StyledBtnIcon>
-                  <FixedImage image={buttonIcon} />
-                </StyledBtnIcon>
-                <StyledBtnText>{buttonText}</StyledBtnText>
-              </StyledA>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <Row className="align-items-center">
+        <Col md={6} sm={12}>
+          <StyledCtaText>{ctaText}</StyledCtaText>
+        </Col>
+        <Col md={6} sm={12} className="text-center font-weight-light">
+          <div className="align-items-center h-100">
+            <StyledA
+              href={buttonLink}
+              className={`${textColor === '#ffffff' ? 'text-white' : 'text-dark'} d-inline-flex`}
+            >
+              <StyledBtnIcon>
+                <FixedImage image={buttonIcon} />
+              </StyledBtnIcon>
+              <StyledBtnText>{buttonText}</StyledBtnText>
+            </StyledA>
+          </div>
+        </Col>
+      </Row>
     </SegmentContainer>
   );
 }
