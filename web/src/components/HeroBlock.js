@@ -12,7 +12,7 @@ function HeroBlock({ col, title, text, image }) {
     <div className={col}>
       {image && (
         <a href="https://votidetection.com/" className="mb-4 d-block">
-          <IllustrationFixed image={image} loading="eagar" />
+          <IllustrationFixed image={image} loading="eagar" fadeIn={false} />
         </a>
       )}
       <StyledH1 className="mb-4">{title.replace(/-/g, '‑')}</StyledH1>
