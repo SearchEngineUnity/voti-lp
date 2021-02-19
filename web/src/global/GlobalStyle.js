@@ -3,10 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
   html {
     font-size: 16px;
-  }
-
-  body {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
   }
 
   h1 {
