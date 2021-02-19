@@ -86,7 +86,7 @@ export const query = graphql`
                 logo {
                   asset {
                     fixed {
-                      ...GatsbySanityImageFixed
+                      ...GatsbySanityImageFixed_noBase64
                     }
                     originalFilename
                     metadata {
@@ -108,7 +108,7 @@ export const query = graphql`
               alt
               asset {
                 fluid {
-                  ...GatsbySanityImageFluid
+                  ...GatsbySanityImageFluid_noBase64
                 }
                 originalFilename
               }
