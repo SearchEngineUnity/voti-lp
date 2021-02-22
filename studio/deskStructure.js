@@ -53,7 +53,9 @@ export default () =>
             .items([
               S.documentTypeListItem('landingPage').title('Landing Pages'),
               S.documentTypeListItem('listingPage').title('Listing Pages'),
+              S.documentTypeListItem('spGuide').title('Single Page Guide'),
               S.divider(),
+              S.documentTypeListItem('category').title('Guide Categories'),
             ]),
         ),
       S.documentTypeListItem('redirect').title('Redirects'),

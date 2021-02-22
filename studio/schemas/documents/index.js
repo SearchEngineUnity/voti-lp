@@ -7,3 +7,4 @@ export { default as listingPage } from './listingPage';
 export { default as redirect } from './redirect';
 export { default as generalSettings } from './generalSettings';
 export { default as socialInfo } from './socialInfo';
+export { default as spGuide } from './spGuide';
