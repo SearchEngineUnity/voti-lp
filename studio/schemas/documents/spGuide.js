@@ -126,13 +126,13 @@ export default {
     //   fieldset: 'general',
     //   validation: (Rule) => [Rule.required().error('Field is required')],
     // },
-    // {
-    //   name: 'displayDate',
-    //   title: 'Display date',
-    //   type: 'datetime',
-    //   fieldset: 'general',
-    //   validation: (Rule) => [Rule.required().error('Field is required')],
-    // },
+    {
+      name: 'displayDate',
+      title: 'Display date',
+      type: 'datetime',
+      fieldset: 'general',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
     {
       name: 'category',
       title: 'Category',

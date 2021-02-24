@@ -6,6 +6,10 @@ export default createGlobalStyle`
     font-family: Poppins, Arial, sans-serif;
   }
 
+  body {
+    font-family: Poppins, Arial, sans-serif;
+  }
+
   h1 {
    font-weight: bold;
   }
