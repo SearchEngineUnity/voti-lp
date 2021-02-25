@@ -20,6 +20,8 @@ export { default as openGraph } from './openGraph';
 export { default as pardotForm } from './pardotForm';
 export { default as segmentBlock } from './segmentBlock';
 export { default as simpleBlockContent } from './simpleBlockContent';
+export { default as spGuideBlockContent } from './spGuideBlockContent';
 export { default as textarea } from './textarea';
 export { default as tocLink } from './tocLink';
 export { default as twitterTag } from './twitterTag';
+export { default as videoEmbed } from './videoEmbed';

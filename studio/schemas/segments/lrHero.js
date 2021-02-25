@@ -4,7 +4,6 @@ export default {
   name: 'lrHero',
   title: 'Left Right Hero',
   icon: BiHeading,
-  description: 'Use composites when you want to put two different blocks side by side.',
   type: 'object',
   fields: [
     {

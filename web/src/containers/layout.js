@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import GlobalStyle from '../global/GlobalStyle';
 import Nav from '../components/MainHeader';
+import Footer from '../components/MainFooter';
 
 const Layout = ({ children }) => {
   return (
@@ -30,6 +31,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Nav />
       <>{children}</>
+      <Footer />
     </>
   );
 };

@@ -101,49 +101,17 @@ export default {
       ],
     },
     {
-      name: 'breadcrumb',
-      title: 'Breadcrumb Text',
-      type: 'string',
-      fieldset: 'general',
-    },
-    {
       name: 'cardImage',
       title: 'Card Image',
       type: 'illustration',
       fieldset: 'general',
     },
     {
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-      fieldset: 'general',
-    },
-    // {
-    //   name: 'author',
-    //   type: 'reference',
-    //   title: 'Author',
-    //   to: [{ type: 'person' }],
-    //   fieldset: 'general',
-    //   validation: (Rule) => [Rule.required().error('Field is required')],
-    // },
-    {
-      name: 'displayDate',
-      title: 'Display date',
-      type: 'datetime',
+      name: 'author',
+      type: 'string',
+      title: 'Author',
       fieldset: 'general',
       validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'category',
-      title: 'Category',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'category' }],
-        },
-      ],
-      fieldset: 'general',
     },
     {
       name: 'h1',
@@ -174,7 +142,7 @@ export default {
     },
     {
       name: 'body',
-      type: 'fullBlockContent',
+      type: 'spGuideBlockContent',
       title: 'Body',
       fieldset: 'mainContent',
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -210,25 +178,25 @@ export default {
       title: 'Remove from Robots.txt',
       type: 'boolean',
       fieldset: 'indexing',
+      descritpion: 'currently not functional',
     },
     {
       name: 'noSitemap',
       title: 'Remove from Sitemap',
       type: 'boolean',
       fieldset: 'indexing',
+      descritpion: 'currently not functional',
     },
   ],
   preview: {
     select: {
       shortName: 'shortName',
       slug: 'slug.current',
-      media: 'heroImage.mainImage.image',
-      isChapter: 'isChapter',
+      media: 'cardImage',
     },
-    prepare({ shortName, slug, media, isChapter }) {
-      const mp = isChapter ? 'MP - ' : '';
+    prepare({ shortName, slug, media }) {
       return {
-        title: `${mp}${shortName}`,
+        title: shortName,
         subtitle: `/${slug}`,
         media,
       };
