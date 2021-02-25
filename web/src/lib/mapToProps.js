@@ -140,3 +140,13 @@ export function mapCardToProps({ cardImage, segments, slug }) {
     url: slug.current,
   };
 }
+
+export function mapGuideHeroToProps({ h1, subtitle, _updatedAt, _createdAt, author, heroImage }) {
+  return {
+    title: h1,
+    subtitle,
+    date: _updatedAt || _createdAt,
+    author,
+    image: heroImage,
+  };
+}

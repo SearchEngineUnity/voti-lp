@@ -4,7 +4,6 @@ export default {
   name: 'listSegment',
   title: 'List Segment',
   icon: GiBugleCall,
-  description: 'Use composites when you want to put two different blocks side by side.',
   type: 'object',
   fields: [
     {

@@ -32,12 +32,11 @@ export default {
     select: {
       title: 'title',
       header: 'header',
-      type: 'type',
     },
-    prepare({ title, header, type }) {
+    prepare({ title, header }) {
       return {
         title,
-        subtitle: `${type} - ${header}`,
+        subtitle: header,
       };
     },
   },

@@ -128,12 +128,14 @@ export default {
       title: 'Remove from Robots.txt',
       type: 'boolean',
       fieldset: 'indexing',
+      descritpion: 'currently not functional',
     },
     {
       name: 'noSitemap',
       title: 'Remove from Sitemap',
       type: 'boolean',
       fieldset: 'indexing',
+      descritpion: 'currently not functional',
     },
   ],
   preview: {

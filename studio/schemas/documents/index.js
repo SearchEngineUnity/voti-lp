@@ -1,4 +1,3 @@
-export { default as category } from './category';
 export { default as colorSet } from './colorSet';
 export { default as companyLogo } from './companyLogo';
 export { default as contactInfo } from './companyInfo';

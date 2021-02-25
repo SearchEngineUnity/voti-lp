@@ -4,7 +4,6 @@ export default {
   name: 'lrSegment',
   title: 'Left Right Segment',
   icon: SiAdobelightroomclassic,
-  description: 'Use composites when you want to put two different blocks side by side.',
   type: 'object',
   fields: [
     {
