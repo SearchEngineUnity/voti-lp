@@ -83,7 +83,6 @@ export default ({ data }) => {
         <Row>
           <article className="col-md-9 col-12">
             <GuideBody blocks={data.guide._rawBody} />
-            {/* <h2>this is the body area</h2> */}
           </article>
           <div className="col-md-3">
             <ToC toc={data.guide.toc} />
