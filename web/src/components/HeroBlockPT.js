@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import IllustrationFixed from './IllustrationFixed';
 import Subtitle from './block-contents/SegmentSerializer';
