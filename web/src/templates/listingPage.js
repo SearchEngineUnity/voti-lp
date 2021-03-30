@@ -101,6 +101,10 @@ export const query = graphql`
               _type
               alt
               asset {
+                fixed {
+                  width
+                  height
+                }
                 fluid {
                   ...GatsbySanityImageFluid_noBase64
                 }

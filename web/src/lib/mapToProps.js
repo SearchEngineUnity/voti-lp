@@ -77,6 +77,8 @@ export function mapImageBlockToProps({ asset, alt }) {
     image: asset?.fluid,
     alt,
     title: asset?.originalFilename,
+    width: asset?.fixed?.width,
+    height: asset?.fixed?.height,
   };
 }
 
@@ -148,5 +150,30 @@ export function mapGuideHeroToProps({ h1, subtitle, _updatedAt, _createdAt, auth
     date: _updatedAt || _createdAt,
     author,
     image: heroImage,
+  };
+}
+
+export function mapCalendlySegmentToProps({ idTag, title, subtitle, url, color }) {
+  return {
+    idTag,
+    title,
+    subtitle,
+    url,
+    textColor: color.foreground.hex,
+    bgColor: color.background.hex,
+  };
+}
+
+export function mapHeroBlockPTToProps({ brand, _rawText, title }) {
+  return {
+    title,
+    text: _rawText,
+    image: brand?.logo,
+  };
+}
+
+export function mapVideoBlockToProps({ url }) {
+  return {
+    url,
   };
 }

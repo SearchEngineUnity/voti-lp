@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import menuIcon from '../images/menu-icon.png';
 import close from '../images/close-icon.png';
 
-console.log(menuIcon);
 const VOHeader = styled.header`
   background-color: rgba(1, 1, 1, 0.1);
   z-index: 1;
@@ -264,7 +263,6 @@ const MobMenuLink = styled(Nav.Link)`
 
 function MainHeader() {
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   return (
     <VOHeader id="masthead" className="sticky-top">

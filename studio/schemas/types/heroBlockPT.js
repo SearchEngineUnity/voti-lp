@@ -1,8 +1,8 @@
 import { GrTextAlignFull } from 'react-icons/gr';
 
 export default {
-  name: 'heroBlock',
-  title: 'Hero Block',
+  name: 'heroBlockPT',
+  title: 'Hero Block with PT',
   type: 'object',
   icon: GrTextAlignFull,
   fields: [
@@ -20,7 +20,7 @@ export default {
     {
       name: 'text',
       title: 'Text',
-      type: 'text',
+      type: 'subtitleBlockContent',
     },
   ],
   preview: {

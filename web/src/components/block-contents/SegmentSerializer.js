@@ -9,7 +9,6 @@ const NoIndentUl = styled.ul`
   font-size: 1rem;
   margin-left: 1rem;
   list-style-type: disc;
-  line-height: 2rem;
 `;
 
 const serializers = {
