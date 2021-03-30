@@ -18,7 +18,12 @@ export default {
       type: 'array',
       title: 'Blocks',
       description: 'Please pick a maximum of two. The first item will appear left in layout.',
-      of: [{ type: 'heroBlock' }, { type: 'illustration' }, { type: 'pardotForm' }],
+      of: [
+        { type: 'heroBlock' },
+        { type: 'heroBlockPT' },
+        { type: 'illustration' },
+        { type: 'video' },
+      ],
       validation: (Rule) => Rule.length(2),
     },
     {

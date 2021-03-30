@@ -48,6 +48,10 @@ export const query = graphql`
       heroImage {
         alt
         asset {
+          fixed {
+            width
+            height
+          }
           fluid {
             ...GatsbySanityImageFluid_noBase64
           }
@@ -79,7 +83,7 @@ export default ({ data }) => {
     <Layout>
       <SEO {...mapSeoToProps(data.guide, data.site.siteMetadata.siteUrl, type)} />
       <GuideHero {...mapGuideHeroToProps(data.guide)} />
-      <Container className="my-5">
+      <Container fluid="xl" className="my-5">
         <Row>
           <article className="col-md-9 col-12">
             <GuideBody blocks={data.guide._rawBody} />

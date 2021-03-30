@@ -2,12 +2,13 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import IllustrationFixed from './IllustrationFixed';
+import Subtitle from './block-contents/SegmentSerializer';
 
 const StyledH1 = styled.h1`
   font-weight: 500;
 `;
 
-function HeroBlock({ col, title, text, image }) {
+function HeroBlockPT({ col, title, text, image }) {
   return (
     <div className={col}>
       {image && (
@@ -16,9 +17,9 @@ function HeroBlock({ col, title, text, image }) {
         </a>
       )}
       <StyledH1 className="mb-4">{title.replace(/-/g, '‑')}</StyledH1>
-      <p>{text.replace(/-/g, '‑')}</p>
+      <Subtitle blocks={text} />
     </div>
   );
 }
 
-export default HeroBlock;
+export default HeroBlockPT;

@@ -12,8 +12,6 @@ function GuideHero({ title, subtitle, date, author, image }) {
   const lastUpdatedDate = new Date(date);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-  console.log(lastUpdatedDate);
-
   return (
     <SegmentContainer id="hero" color={textColor} bgColor={bgColor}>
       <Row className="align-items-center">

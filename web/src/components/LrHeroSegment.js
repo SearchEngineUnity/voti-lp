@@ -3,9 +3,15 @@ import { Row } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 import SegmentContainer from './SegmentContainer';
 import ImageBlock from './HeroImageBlock';
-import PardotForm from './PardotForm';
 import HeroBlock from './HeroBlock';
-import { mapHeroBlockToProps, mapImageBlockToProps } from '../lib/mapToProps';
+import HeroBlockPT from './HeroBlockPT';
+import VideoBlock from './VideoBlock';
+import {
+  mapHeroBlockToProps,
+  mapImageBlockToProps,
+  mapHeroBlockPTToProps,
+  mapVideoBlockToProps,
+} from '../lib/mapToProps';
 
 function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   const colArr = layout.split(':').map((el) => parseInt(el, 10));
@@ -45,20 +51,23 @@ function LrHeroSegment({ layout, blocks, idTag, textColor, bgColor }) {
   };
 
   return (
-    <SegmentContainer idTag={idTag} color={textColor} bgColor={bgColor}>
+    <SegmentContainer id={idTag} color={textColor} bgColor={bgColor}>
       <Row className="align-items-center">
         {blocks.map((block, index) => {
           const { _type } = block;
           const col = colCalculator(colArr[index], colDivisor);
           switch (_type) {
-            case 'pardotForm':
-              return <PardotForm {...block} col={col} key={block._key} />;
-
             case 'illustration':
               return <ImageBlock {...mapImageBlockToProps(block)} key={block._key} col={col} />;
 
             case 'heroBlock':
               return <HeroBlock {...mapHeroBlockToProps(block)} key={block._key} col={col} />;
+
+            case 'heroBlockPT':
+              return <HeroBlockPT {...mapHeroBlockPTToProps(block)} key={block._key} col={col} />;
+
+            case 'video':
+              return <VideoBlock {...mapVideoBlockToProps(block)} key={block._key} col={col} />;
 
             default:
               return <div key="default"> LR block still under development</div>;
