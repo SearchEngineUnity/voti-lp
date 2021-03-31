@@ -77,8 +77,8 @@ export function mapImageBlockToProps({ asset, alt }) {
     image: asset?.fluid,
     alt,
     title: asset?.originalFilename,
-    width: asset?.fixed?.width,
-    height: asset?.fixed?.height,
+    width: asset?.metadata?.dimensions?.width,
+    height: asset?.metadata?.dimensions?.height,
   };
 }
 
