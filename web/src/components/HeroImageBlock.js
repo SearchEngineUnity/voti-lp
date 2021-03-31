@@ -5,6 +5,7 @@ import Img from 'gatsby-image/withIEPolyfill';
 
 function HeroImageBlock({ col, image, alt, title, width, height }) {
   const maxHeight = height > 430 ? 430 : height;
+  console.log(width, height);
   return (
     <div className={col}>
       {/* <Row>
@@ -22,8 +23,6 @@ function HeroImageBlock({ col, image, alt, title, width, height }) {
         style={{
           maxHeight,
           maxWidth: width,
-          height: 'auto',
-          width: 'auto',
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
