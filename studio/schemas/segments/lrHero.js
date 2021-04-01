@@ -4,7 +4,6 @@ export default {
   name: 'lrHero',
   title: 'Left Right Hero',
   icon: BiHeading,
-  description: 'Use composites when you want to put two different blocks side by side.',
   type: 'object',
   fields: [
     {
@@ -19,7 +18,12 @@ export default {
       type: 'array',
       title: 'Blocks',
       description: 'Please pick a maximum of two. The first item will appear left in layout.',
-      of: [{ type: 'heroBlock' }, { type: 'illustration' }, { type: 'pardotForm' }],
+      of: [
+        { type: 'heroBlock' },
+        { type: 'heroBlockPT' },
+        { type: 'illustration' },
+        { type: 'video' },
+      ],
       validation: (Rule) => Rule.length(2),
     },
     {

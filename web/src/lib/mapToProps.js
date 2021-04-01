@@ -77,6 +77,8 @@ export function mapImageBlockToProps({ asset, alt }) {
     image: asset?.fluid,
     alt,
     title: asset?.originalFilename,
+    width: asset?.metadata?.dimensions?.width,
+    height: asset?.metadata?.dimensions?.height,
   };
 }
 
@@ -138,5 +140,40 @@ export function mapCardToProps({ cardImage, segments, slug }) {
     imageAlt: cardImage.alt,
     filename: cardImage.asset.originalFilename,
     url: slug.current,
+  };
+}
+
+export function mapGuideHeroToProps({ h1, subtitle, _updatedAt, _createdAt, author, heroImage }) {
+  return {
+    title: h1,
+    subtitle,
+    date: _updatedAt || _createdAt,
+    author,
+    image: heroImage,
+  };
+}
+
+export function mapCalendlySegmentToProps({ idTag, title, subtitle, url, color }) {
+  return {
+    idTag,
+    title,
+    subtitle,
+    url,
+    textColor: color.foreground.hex,
+    bgColor: color.background.hex,
+  };
+}
+
+export function mapHeroBlockPTToProps({ brand, _rawText, title }) {
+  return {
+    title,
+    text: _rawText,
+    image: brand?.logo,
+  };
+}
+
+export function mapVideoBlockToProps({ url }) {
+  return {
+    url,
   };
 }

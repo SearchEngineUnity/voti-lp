@@ -105,6 +105,12 @@ export const query = graphql`
                   ...GatsbySanityImageFluid_noBase64
                 }
                 originalFilename
+                metadata {
+                  dimensions {
+                    width
+                    height
+                  }
+                }
               }
             }
           }

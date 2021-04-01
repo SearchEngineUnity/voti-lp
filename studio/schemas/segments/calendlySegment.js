@@ -1,9 +1,9 @@
-import { GiBugleCall } from 'react-icons/gi';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 
 export default {
-  name: 'listSegment',
-  title: 'List Segment',
-  icon: GiBugleCall,
+  name: 'calendlySegment',
+  title: 'Calendly Segment',
+  icon: FaRegCalendarAlt,
   type: 'object',
   fields: [
     {
@@ -15,27 +15,25 @@ export default {
     },
     {
       name: 'title',
+      type: 'string',
       title: 'Title',
-      type: 'string',
+      validation: (Rule) => Rule.required().error('Field is required'),
     },
     {
-      name: 'icon',
-      title: 'List Icon',
-      type: 'string',
+      name: 'subtitle',
+      type: 'text',
+      title: 'Subtitle',
     },
     {
-      name: 'list',
-      title: 'List Items',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [
-            {
-              type: 'landingPage',
-            },
-          ],
-        },
+      name: 'url',
+      type: 'url',
+      title: 'Calendly Embed URL',
+      validation: (Rule) => [
+        Rule.required().error('Field is required'),
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['https'],
+        }),
       ],
     },
     {
@@ -43,14 +41,6 @@ export default {
       title: 'Color Setting',
       type: 'reference',
       to: [{ type: 'colorSet' }],
-    },
-    {
-      name: 'cardType',
-      title: 'Card Type',
-      type: 'string',
-      options: {
-        list: ['Brochure', 'Video', 'Landing Page'],
-      },
     },
   ],
   preview: {

@@ -19,7 +19,7 @@ const LandingPage = () => (
       />
       <meta property="og:locale" content="en_CA" />
       {/* <meta property="og:type" content="" /> */}
-      <meta property="og:url" content="https://insights.votidetection.com/" />
+      <meta property="og:url" content="https://learn.votidetection.com/" />
       <meta
         property="og:title"
         content="VOTI Detection Product Offerings for Threat Detection &amp; Management"

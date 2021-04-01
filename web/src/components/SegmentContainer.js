@@ -8,9 +8,9 @@ const StyledSegmentContainer = styled.section`
   background: ${(props) => props.bgColor};
 `;
 
-function SegmentContainer({ idTag, color, bgColor, children }) {
+function SegmentContainer({ id, color, bgColor, children }) {
   return (
-    <StyledSegmentContainer id={idTag} className="py-5" color={color} bgColor={bgColor}>
+    <StyledSegmentContainer id={id} className="py-5" color={color} bgColor={bgColor}>
       <Container>{children}</Container>
     </StyledSegmentContainer>
   );

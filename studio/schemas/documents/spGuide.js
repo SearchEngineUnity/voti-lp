@@ -1,15 +1,22 @@
-import { MdWeb } from 'react-icons/md';
-import * as segments from '../segments';
+import { RiPagesLine } from 'react-icons/ri';
 
 export default {
-  name: 'listingPage',
+  name: 'spGuide',
   type: 'document',
-  title: 'Listing Page',
-  icon: MdWeb,
+  title: 'Single Page Guide',
+  icon: RiPagesLine,
   fieldsets: [
     {
+      name: 'meta',
+      title: 'SEO and Social',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
       name: 'general',
-      title: 'SEO and General Fields',
+      title: 'General Fields',
       options: {
         collapsible: true,
         collapsed: true,
@@ -24,8 +31,16 @@ export default {
       },
     },
     {
-      name: 'segments',
-      title: 'Segments',
+      name: 'hero',
+      title: 'Hero',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'mainContent',
+      title: 'Main Content',
       options: {
         collapsible: true,
         collapsed: false,
@@ -42,21 +57,11 @@ export default {
   ],
   fields: [
     {
-      name: 'shortName',
-      title: 'Short Name',
-      type: 'string',
-      fieldset: 'general',
-      validation: (Rule) => [
-        Rule.required().error('Field is required'),
-        // add a custom rule for isUnique
-      ],
-    },
-    {
       name: 'title',
       type: 'string',
       title: 'Page Title',
       description: 'Optimal length under 60 characters for Google SERP',
-      fieldset: 'general',
+      fieldset: 'meta',
       validation: (Rule) => [
         Rule.required().error('Field is required'),
         Rule.max(60).warning('Length over optimal'),
@@ -67,7 +72,7 @@ export default {
       title: 'Meta Description',
       type: 'text',
       description: 'Optimal length is under 160 characters for Google SERP',
-      fieldset: 'general',
+      fieldset: 'meta',
       validation: (Rule) => [
         Rule.required().error('Field is require.'),
         Rule.max(160).warning('Length over optimal'),
@@ -77,31 +82,76 @@ export default {
       name: 'facebook',
       title: 'Facebook Share',
       type: 'openGraph',
-      fieldset: 'social',
+      fieldset: 'meta',
     },
     {
       name: 'twitter',
       title: 'Twitter Share',
       type: 'twitterTag',
-      fieldset: 'social',
+      fieldset: 'meta',
     },
     {
-      name: 'segments',
-      type: 'array',
-      fieldsest: 'segments',
-      title: 'Segments',
-      of: [
-        ...Object.values(segments).map(({ name, title }) => ({
-          type: name,
-          title,
-        })),
+      name: 'shortName',
+      title: 'Short Name',
+      type: 'string',
+      fieldset: 'general',
+      validation: (Rule) => [
+        Rule.required().error('Field is required'),
+        // add a custom rule for isUnique
       ],
+    },
+    {
+      name: 'cardImage',
+      title: 'Card Image',
+      type: 'illustration',
+      fieldset: 'general',
+    },
+    {
+      name: 'author',
+      type: 'string',
+      title: 'Author',
+      fieldset: 'general',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+    {
+      name: 'h1',
+      title: 'H1 Text',
+      type: 'string',
+      fieldset: 'hero',
+      validation: (Rule) => [Rule.required().error('H1 Text is required')],
+    },
+    {
+      name: 'subtitle',
+      title: 'Subtitle Text',
+      type: 'text',
+      fieldset: 'hero',
+    },
+    {
+      name: 'heroImage',
+      title: 'Hero Image',
+      type: 'illustration',
+      fieldset: 'hero',
+    },
+    {
+      name: 'toc',
+      title: 'Table of Content',
+      type: 'array',
+      of: [{ type: 'tocLink' }],
+      fieldset: 'mainContent',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+    {
+      name: 'body',
+      type: 'spGuideBlockContent',
+      title: 'Body',
+      fieldset: 'mainContent',
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'This page URL will show as domain.com/slug',
+      description: 'This guide URL will show as domain.com/slug',
       fieldset: 'indexing',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
@@ -140,15 +190,14 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      shortName: 'shortName',
       slug: 'slug.current',
-      media: 'metaTags.openGraph.image',
+      media: 'cardImage',
     },
-    prepare({ title, slug, media }) {
-      const currentSlug = slug === '/' ? '/' : `/${slug}`;
+    prepare({ shortName, slug, media }) {
       return {
-        title,
-        subtitle: currentSlug,
+        title: shortName,
+        subtitle: `/${slug}`,
         media,
       };
     },

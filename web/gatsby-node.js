@@ -53,6 +53,35 @@ async function createListingPages(actions, graphql) {
   });
 }
 
+// create individual guides
+async function createSpGuide(actions, graphql) {
+  const { data } = await graphql(`
+    {
+      allSanitySpGuide {
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const guides = data.allSanitySpGuide.edges;
+
+  guides.forEach((guide) => {
+    actions.createPage({
+      path: `/${guide.node.slug.current}`,
+      component: path.resolve(`./src/templates/spGuide.js`),
+      context: {
+        slug: guide.node.slug.current,
+      },
+    });
+  });
+}
+
 // create redirect
 async function createPageRedirects(actions, graphql) {
   const { data } = await graphql(`
@@ -87,5 +116,6 @@ async function createPageRedirects(actions, graphql) {
 exports.createPages = async ({ actions, graphql }) => {
   await createLandingPages(actions, graphql);
   await createListingPages(actions, graphql);
+  await createSpGuide(actions, graphql);
   await createPageRedirects(actions, graphql);
 };

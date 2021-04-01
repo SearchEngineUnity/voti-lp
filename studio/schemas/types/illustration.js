@@ -1,7 +1,10 @@
+import { BsImage } from 'react-icons/bs';
+
 export default {
   name: 'illustration',
   title: 'Illustration',
   type: 'image',
+  icon: BsImage,
   fields: [
     {
       name: 'alt',

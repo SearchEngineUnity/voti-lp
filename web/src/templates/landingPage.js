@@ -5,7 +5,9 @@ import SEO from '../components/Seo';
 import Hero from '../components/LrHeroSegment';
 import LrSegment from '../components/LrSegment';
 import CtaSegment from '../components/CtaSegment';
+import CalendlySegment from '../components/CalendlySegment';
 import {
+  mapCalendlySegmentToProps,
   mapSeoToProps,
   mapHeroToProps,
   mapLrSegmentToProps,
@@ -42,6 +44,22 @@ export const query = graphql`
         title
       }
       segments {
+        ... on SanityCalendlySegment {
+          _key
+          _type
+          idTag
+          subtitle
+          title
+          url
+          color {
+            background {
+              hex
+            }
+            foreground {
+              hex
+            }
+          }
+        }
         ... on SanityLrCta {
           _key
           _type
@@ -102,6 +120,34 @@ export const query = graphql`
               text
               title
             }
+            ... on SanityHeroBlockPT {
+              _key
+              _type
+              _rawText(resolveReferences: { maxDepth: 10 })
+              title
+              brand {
+                logo {
+                  asset {
+                    fixed {
+                      ...GatsbySanityImageFixed_noBase64
+                    }
+                    originalFilename
+                    metadata {
+                      dimensions {
+                        width
+                        height
+                      }
+                    }
+                  }
+                  alt
+                }
+              }
+            }
+            ... on SanityVideo {
+              _key
+              _type
+              url
+            }
             ... on SanityIllustration {
               _key
               _type
@@ -111,6 +157,12 @@ export const query = graphql`
                   ...GatsbySanityImageFluid_noBase64
                 }
                 originalFilename
+                metadata {
+                  dimensions {
+                    width
+                    height
+                  }
+                }
               }
             }
           }
@@ -192,6 +244,9 @@ export default ({ data }) => {
 
             case 'lrCta':
               return <CtaSegment key={segment._key} {...mapCtaSegmentToProps(segment)} />;
+
+            case 'calendlySegment':
+              return <CalendlySegment key={segment._key} {...mapCalendlySegmentToProps(segment)} />;
 
             default:
               return <div key="default"> Still under development</div>;

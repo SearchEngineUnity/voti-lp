@@ -28,7 +28,7 @@ function ListSegment({ idTag, title, icon, cards, cardType, textColor, bgColor, 
   };
 
   return (
-    <SegmentContainer idTag={idTag} textColor={textColor} bgColor={bgColor}>
+    <SegmentContainer id={idTag} textColor={textColor} bgColor={bgColor}>
       <h2 className="mb-3 h3">
         <i className={`mr-3 ${icon}`} />
         {title}

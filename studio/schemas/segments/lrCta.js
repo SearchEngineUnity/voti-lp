@@ -4,7 +4,6 @@ export default {
   name: 'lrCta',
   title: 'Left Right CTA',
   icon: GiBugleCall,
-  description: 'Use composites when you want to put two different blocks side by side.',
   type: 'object',
   fields: [
     {
