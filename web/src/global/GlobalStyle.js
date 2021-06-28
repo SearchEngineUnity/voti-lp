@@ -4,6 +4,7 @@ export default createGlobalStyle`
   html {
     font-size: 16px;
     font-family: Poppins, Arial, sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {
