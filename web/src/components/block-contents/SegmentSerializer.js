@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Illustration from './Illustration';
 import Logo from './Logo';
+import CtaButton from './CtaButton';
 
 const NoIndentUl = styled.ul`
   font-size: 1rem;
@@ -21,6 +22,9 @@ const serializers = {
     },
     companyLogo({ node }) {
       return <Logo logo={node} />;
+    },
+    ctaButton({ node }) {
+      return <CtaButton btnText={node.btnText} hash={node.hash} />;
     },
   },
   marks: {
