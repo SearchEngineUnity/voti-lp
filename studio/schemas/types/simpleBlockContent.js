@@ -56,6 +56,9 @@ export default {
       type: 'illustration',
     },
     {
+      type: 'ctaButton',
+    },
+    {
       type: 'reference',
       title: 'Logo Reference',
       to: [{ type: 'companyLogo' }],

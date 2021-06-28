@@ -7,26 +7,20 @@ export default {
   icon: MdAddBox,
   fields: [
     {
-      title: 'Title',
-      name: 'title',
+      title: 'Text',
+      name: 'btnText',
       type: 'string',
     },
     {
-      title: 'Internal page',
-      name: 'internalLink',
-      type: 'internalLink',
-      description: 'Use this field to look up the page within the same website',
-    },
-    {
-      title: 'External link',
-      name: 'externalLink',
-      type: 'externalLink',
-      description: 'Use this field if link is external to the website',
+      title: 'Jump Link',
+      name: 'hash',
+      type: 'string',
+      description: 'Use the id for the section you would like the user to scroll to on click',
     },
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'btnText',
     },
   },
 };
